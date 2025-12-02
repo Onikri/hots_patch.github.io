@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotS PTR Patch Notes - Nov 3 2025</title>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;800&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0f1a;
+            color: #e2e8f0;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        .font-header {
+            font-family: 'Exo 2', sans-serif;
+        }
+
+        .nexus-gradient {
+            background: radial-gradient(circle at center, #2d1b4e 0%, #0f0f1a 100%);
+        }
+
+        .card-glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card-glass:hover {
+            transform: translateY(-5px);
+            border-color: rgba(168, 85, 247, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(168, 85, 247, 0.3);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+        }
+
+        .ability-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f0f1a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9333ea;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        // --- ICONS (SVG Replacements for Lucide) ---
+        const Icons = {
+            ArrowUp: ({ className }) => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                    <line x1="12" y1="19" x2="12" y2="5"></line>
+                    <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+            ),
+            ArrowDown: ({ className }) => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+            ),
+            RefreshCw: ({ className }) => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                    <polyline points="23 4 23 10 17 10"></polyline>
+                    <polyline points="1 20 1 14 7 14"></polyline>
+                    <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+                </svg>
+            ),
+            Zap: ({ className }) => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                </svg>
+            ),
+            Shield: ({ className }) => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+            ),
+            Crown: ({ className }) => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                    <path d="M2 4l3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14"></path>
+                </svg>
+            ),
+            Map: ({ className }) => (
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                    <line x1="8" y1="2" x2="8" y2="18"></line>
+                    <line x1="16" y1="6" x2="16" y2="22"></line>
+                </svg>
+            )
+        };
+
+        // --- COMPONENTS ---
+
+        const IconWrapper = ({ name, color }) => {
+            const IconComponent = Icons[name];
+            return IconComponent ? <IconComponent className={color} /> : null;
+        };
+
+        const Badge = ({ type }) => {
+            let style = "";
+            let text = "";
+            let icon = "";
+
+            switch (type) {
+                case "buff":
+                    style = "bg-green-900/50 text-green-300 border-green-700/50";
+                    text = "BUFF";
+                    icon = "ArrowUp";
+                    break;
+                case "nerf":
+                    style = "bg-red-900/50 text-red-300 border-red-700/50";
+                    text = "NERF";
+                    icon = "ArrowDown";
+                    break;
+                case "rework":
+                    style = "bg-blue-900/50 text-blue-300 border-blue-700/50";
+                    text = "REWORK";
+                    icon = "RefreshCw";
+                    break;
+                case "new":
+                    style = "bg-amber-900/50 text-amber-300 border-amber-700/50";
+                    text = "NEW";
+                    icon = "Zap";
+                    break;
+                default:
+                    style = "bg-slate-800 text-slate-300";
+                    text = type;
+            }
+
+            return (
+                <span className={`flex items-center gap-1 px-2 py-0.5 rounded text-xs font-bold border ${style}`}>
+                    <IconWrapper name={icon} color="currentColor" />
+                    {text}
+                </span>
+            );
+        };
+
+        const HeroCard = ({ hero }) => {
+            return (
+                <div className="card-glass rounded-xl p-6 mb-6">
+                    <div className="flex items-center gap-4 mb-4 border-b border-slate-700 pb-4">
+                        <div className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold border-2 shadow-lg
+                            ${hero.role === 'Assassin' ? 'bg-red-900/30 border-red-500 text-red-500' :
+                                hero.role === 'Specialist' ? 'bg-purple-900/30 border-purple-500 text-purple-500' :
+                                    'bg-green-900/30 border-green-500 text-green-500'}`}>
+                            {hero.name[0]}
+                        </div>
+                        <div>
+                            <h3 className="text-2xl font-header font-bold text-white tracking-wide">{hero.name}</h3>
+                            <span className="text-slate-400 text-sm uppercase tracking-widest">{hero.role}</span>
+                        </div>
+                    </div>
+
+                    <div className="space-y-4">
+                        {hero.changes.map((change, idx) => (
+                            <div key={idx} className="bg-slate-800/50 rounded-lg p-3 border border-slate-700/50">
+                                <div className="flex justify-between items-start mb-2">
+                                    <span className="font-bold text-purple-300">{change.target}</span>
+                                    <Badge type={change.type} />
+                                </div>
+                                <p className="text-slate-300 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: change.desc }}></p>
+                                {change.pinnacle && (
+                                    <div className="mt-2 mt-3 flex items-start gap-2 bg-amber-900/20 p-2 rounded border border-amber-500/30">
+                                        <IconWrapper name="Crown" color="text-amber-400 shrink-0" />
+                                        <div>
+                                            <span className="block text-xs font-bold text-amber-400 uppercase">Pinnacle Reward</span>
+                                            <span className="text-xs text-amber-100">{change.pinnacle}</span>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            );
+        };
+
+        const MapCard = ({ map }) => {
+            return (
+                <div className="card-glass rounded-xl p-5 h-full">
+                    <div className="flex items-center gap-3 mb-3">
+                        <IconWrapper name="Map" color="text-blue-400" />
+                        <h4 className="text-xl font-header font-bold">{map.name}</h4>
+                    </div>
+                    <ul className="space-y-2">
+                        {map.changes.map((c, i) => (
+                            <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
+                                <span className="text-blue-500 mt-1">•</span>
+                                {c}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            );
+        };
+
+        const App = () => {
+            const [activeTab, setActiveTab] = useState('heroes');
+
+            const heroesData = [
+                {
+                    name: "Falstad",
+                    role: "Assassin",
+                    changes: [
+                        { target: "Dishonorable Discharge (Talent)", type: "rework", desc: "Бонусы теперь даются за 20/45/75 попаданий. На 20: +30% урона. На 45: +75% урона и -2 сек. перезарядки.", pinnacle: "На 75 попаданиях: Lightning Rod дает 2 дополнительных удара." },
+                        { target: "Frequent Flyer (Talent)", type: "rework", desc: "Скорость атаки снижена до 25%. Стаки теперь за миньонов (1) и героев (5). На 50 стаках: +20 урона. На 125 стаках: +50 урона.", pinnacle: "На 300 стаках: +125 урона от автоатак." },
+                        { target: "Gathering Storm (Talent)", type: "rework", desc: "Бонусы на 30/80/150 стаках. На 30: +30% урона. На 80: +50% урона. Теряет 8 стаков при смерти.", pinnacle: "На 150 стаках: +70% урона." },
+                        { target: "Charged Up", type: "rework", desc: "Перемещен на 13-й уровень. Теперь дает откат способностей при убийствах героев." },
+                        { target: "Thunderstrikes", type: "rework", desc: "Перемещен на 7-й уровень." }
+                    ]
+                },
+                {
+                    name: "Gul'dan",
+                    role: "Assassin",
+                    changes: [
+                        { target: "Echoed Corruption (Talent)", type: "nerf", desc: "Требуется 60 стаков (ранее меньше).", pinnacle: "На 100 стаках: Corruption исцеляет на 50% от нанесенного урона." },
+                        { target: "Pursuit of Flame (Talent)", type: "buff", desc: "Радиус увеличен с 10% до 15%. Площадь увеличена на 33%. Теряет 6 стаков при смерти." }
+                    ]
+                },
+                {
+                    name: "Kerrigan",
+                    role: "Assassin",
+                    changes: [
+                        { target: "Ravage [Q]", type: "rework", desc: "Урон снижен (130 -> 115). <strong>Базовый Квест</strong>: Убийства за 1.5 сек дают стаки. На 75 стаках: +125 урона.", pinnacle: "На 125 стаках: +200 дополнительного урона." },
+                        { target: "Primal Grasp [E]", type: "buff", desc: "Перезарядка 8 сек. Начальный урон 40 (был 25), отложенный 165 (был 195)." },
+                        { target: "Impaling Blades [W]", type: "buff", desc: "Перезарядка 9 сек. Урон 150. Радиус 1.65. Стан 0.75 сек." },
+                        { target: "Assimilation [Trait]", type: "buff", desc: "Щиты от автоатак 20% (было 10%)." },
+                        { target: "Ravaging Ferocity", type: "new", desc: "Дает 25% скорости атаки на 3 сек после Ravage." }
+                    ]
+                },
+                {
+                    name: "Sylvanas",
+                    role: "Assassin",
+                    changes: [
+                        { target: "Black Arrows [Trait]", type: "rework", desc: "Переименовано из Banshee's Curse. Базовый бонус 15%. Квест: урон по не-миньонам с 3 стаками. На 200 стаках: бонус 50%.", pinnacle: "На 400 стаках: исцеление 50% от урона по целям с 3 стаками." },
+                        { target: "Possession", type: "buff", desc: "Теперь <strong>Базовая Способность</strong>. 4 заряда, восстановление 25 сек." },
+                        { target: "Haunting Arrows", type: "new", desc: "Активная способность: Black Arrows оглушают не-героев. КД 90 сек." },
+                        { target: "Barbed Shot", type: "buff", desc: "Бонус урона 400%." }
+                    ]
+                },
+                {
+                    name: "Thrall",
+                    role: "Bruiser",
+                    changes: [
+                        { target: "Crash Lightning (Talent)", type: "rework", desc: "Бонусы на 15 и 30 стаках (+240 урона каждый). Теряет 6 стаков при смерти." },
+                        { target: "Echo of the Elements", type: "rework", desc: "Бонусы на 20/40/100 стаках. 20: -20 маны. 40: +1 отскок.", pinnacle: "На 100 стаках: +1 заряд Chain Lightning." },
+                        { target: "Maelstrom Weapon", type: "rework", desc: "Перемещен на 1-й уровень. Бонусы на 20/40/100 стаках.", pinnacle: "На 100 стаках: Frostwolf Resilience дает +200% исцеления." },
+                        { target: "Rolling Thunder", type: "nerf", desc: "Перемещен на 7-й уровень. Больше не дает отскоков." }
+                    ]
+                },
+                {
+                    name: "Zul'jin",
+                    role: "Assassin",
+                    changes: [
+                        { target: "You Want Axe? [Trait]", type: "rework", desc: "Больше <strong>нет лимита</strong> на стаки. При смерти теряет 3 стака (15 попаданий)." },
+                        { target: "Headhunter (Talent)", type: "buff", desc: "Бонус урона за убийство героя увеличен до 2.5%." }
+                    ]
+                }
+            ];
+
+            const mapsData = [
+                { name: "General Updates", changes: ["Добавлены Fallback Towers на длинных линиях (умирают вместе с фортом).", "Атаки Core, Keeps и Forts сильнее снижают броню (-20/-40).", "Усилена механика камбэка при разрыве в уровнях.", "Forts/Keeps больше не дают 35 брони союзникам."] },
+                { name: "Warhead Junction", changes: ["Nukes (Ядерные удары) теперь наносят двойной урон строениям.", "Урон скалируется от времени подбора боеголовки."] },
+                { name: "Braxis Holdout", changes: ["Здоровье ранних зергов снижено на 15%.", "Значительно усилено скалирование зергов после 15-й минуты."] },
+                { name: "Alterac Pass", changes: ["Кавалерия получает меньше урона от строений (но все еще 60%).", "Время раннего захвата снижено до 25 сек."] },
+                { name: "Garden of Terror", changes: ["Увеличено скалирование здоровья Ужаса.", "Луковица (Plant Bulb) теперь наносит себе 10% урона в секунду (было 6%)."] },
+                { name: "Infernal Shrines", changes: ["Здоровье ранних Карателей снижено на 15%.", "Значительно усилено скалирование после 15-й минуты."] }
+            ];
+
+            const bugFixes = [
+                { category: "Maps", items: ["Исправлена ошибка, из-за которой Ядро (Core) могло атаковать врагов, находящихся в Зале Штормов (Hall of Storms)."] },
+                { category: "Heroes", items: ["D.Va: Исправлена ошибка с накоплением заряда Self-Destruct.", "Gazlowe: Турели больше не атакуют неуязвимых врагов."] }
+            ];
+
+            return (
+                <div className="min-h-screen nexus-gradient pb-20">
+                    {/* Header */}
+                    <header className="relative pt-12 pb-8 px-4 text-center overflow-hidden">
+                        <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+                        <div className="relative z-10">
+                            <span className="inline-block py-1 px-3 rounded-full bg-purple-600/30 border border-purple-500 text-purple-200 text-xs font-bold tracking-widest mb-4">
+                                PTR PATCH • 3 NOV 2025
+                            </span>
+                            <h1 className="text-5xl md:text-7xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-blue-100 to-blue-400 drop-shadow-lg mb-2">
+                                HEROES OF THE STORM
+                            </h1>
+                            <p className="text-xl text-blue-200/70 font-light max-w-2xl mx-auto">
+                                Обзор обновления: Pinnacle Rewards, Fallback Towers и ребаланс героев
+                            </p>
+                        </div>
+                    </header>
+
+                    {/* Navigation */}
+                    <div className="sticky top-0 z-50 bg-[#0f0f1a]/90 backdrop-blur-md border-b border-white/10 mb-8">
+                        <div className="max-w-6xl mx-auto flex justify-center gap-2 p-2">
+                            <button
+                                onClick={() => setActiveTab('general')}
+                                className={`px-6 py-2 rounded-lg font-bold transition-all ${activeTab === 'general' ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/30' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
+                            >
+                                Общее
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('heroes')}
+                                className={`px-6 py-2 rounded-lg font-bold transition-all ${activeTab === 'heroes' ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
+                            >
+                                Герои
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('maps')}
+                                className={`px-6 py-2 rounded-lg font-bold transition-all ${activeTab === 'maps' ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-500/30' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
+                            >
+                                Карты
+                            </button>
+                            <button
+                                onClick={() => setActiveTab('bugs')}
+                                className={`px-6 py-2 rounded-lg font-bold transition-all ${activeTab === 'bugs' ? 'bg-rose-600 text-white shadow-lg shadow-rose-500/30' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
+                            >
+                                Баги
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Main Content */}
+                    <main className="max-w-6xl mx-auto px-4">
+
+                        {/* GENERAL TAB */}
+                        {activeTab === 'general' && (
+                            <div className="grid md:grid-cols-2 gap-6 animate-fade-in">
+                                <div className="card-glass rounded-xl p-8 border-l-4 border-amber-500">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="p-3 bg-amber-500/20 rounded-lg">
+                                            <IconWrapper name="Crown" color="text-amber-400" />
+                                        </div>
+                                        <h2 className="text-2xl font-bold text-amber-100">Pinnacle Rewards</h2>
+                                    </div>
+                                    <p className="text-slate-300 leading-relaxed">
+                                        В игру введена новая система наград для квестовых талантов. Эти бонусы крайне сложно получить (требуют огромного количества стаков), но они дают сокрушительное преимущество в поздней игре (Late Game).
+                                    </p>
+                                </div>
+
+                                <div className="card-glass rounded-xl p-8 border-l-4 border-red-500">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="p-3 bg-red-500/20 rounded-lg">
+                                            <IconWrapper name="Shield" color="text-red-400" />
+                                        </div>
+                                        <h2 className="text-2xl font-bold text-red-100">Изменения Брони</h2>
+                                    </div>
+                                    <p className="text-slate-300 leading-relaxed">
+                                        Атаки от строений (Core, Keeps, Forts) и новых башен теперь снижают броню героев значительно сильнее:
+                                        <br /><span className="text-red-400 font-bold">-20 / -40 Armor</span> (ранее -10 / -20).
+                                        <br />Больше никаких танков под фортами без последствий!
+                                    </p>
+                                </div>
+
+                                <div className="card-glass rounded-xl p-8 border-l-4 border-blue-500 md:col-span-2">
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <div className="p-3 bg-blue-500/20 rounded-lg">
+                                            <IconWrapper name="Zap" color="text-blue-400" />
+                                        </div>
+                                        <h2 className="text-2xl font-bold text-blue-100">Аудио и Музыка</h2>
+                                    </div>
+                                    <p className="text-slate-300 leading-relaxed">
+                                        Обновлена музыка на главном экране и при запуске игры. Погрузитесь в атмосферу Нексуса с новыми треками!
+                                    </p>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* HEROES TAB */}
+                        {activeTab === 'heroes' && (
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                {heroesData.map((hero, idx) => (
+                                    <HeroCard key={idx} hero={hero} />
+                                ))}
+                            </div>
+                        )}
+
+                        {/* MAPS TAB */}
+                        {activeTab === 'maps' && (
+                            <div className="space-y-6">
+                                <div className="bg-blue-900/20 border border-blue-500/30 rounded-xl p-6 text-center">
+                                    <h3 className="text-2xl font-bold text-blue-300 mb-2">Новая механика: Fallback Towers</h3>
+                                    <p className="text-slate-300">На большинстве карт на длинных линиях добавлены дополнительные башни. Они имеют те же характеристики, что и башни Кипа (Keep), но автоматически разрушаются, если падает соответствующий Форт.</p>
+                                </div>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    {mapsData.map((map, idx) => (
+                                        <MapCard key={idx} map={map} />
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* BUGS TAB */}
+                        {activeTab === 'bugs' && (
+                            <div className="space-y-6">
+                                {bugFixes.map((section, idx) => (
+                                    <div key={idx} className="card-glass rounded-xl p-6">
+                                        <h3 className="text-xl font-bold text-slate-200 mb-4 border-b border-slate-700 pb-2">{section.category}</h3>
+                                        <ul className="space-y-3">
+                                            {section.items.map((bug, i) => (
+                                                <li key={i} className="flex items-start gap-3 text-slate-300">
+                                                    <span className="text-rose-500 mt-1">
+                                                        <IconWrapper name="RefreshCw" color="w-4 h-4" />
+                                                    </span>
+                                                    {bug}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+
+                    </main>
+
+                    <footer className="mt-20 text-center text-slate-600 text-sm">
+                        <p>Based on Official Blizzard Patch Notes • Nov 3, 2025</p>
+                        <p className="mt-2 opacity-50">Fan made visualization</p>
+                    </footer>
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
