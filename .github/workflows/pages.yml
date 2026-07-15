@@ -1,4 +1,4 @@
-name: Deploy GitHub Pages
+name: Deploy Tank guide to GitHub Pages
 
 on:
   push:
@@ -21,27 +21,25 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout deployment package
         uses: actions/checkout@v4
-      - name: Set up Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-      - name: Install dependencies
-        run: npm ci
-      - name: Restore compressed guide data
-        run: node scripts/restore-pages-data.mjs
-      - name: Export static site
-        run: npm run build:pages
-      - name: Mirror optimized visual assets
-        run: node scripts/fetch-pages-assets.mjs
+
+      - name: Restore optimized static site
+        run: |
+          mkdir site
+          cat deploy/site.tar.gz.part-* > /tmp/site.tar.gz
+          tar -xzf /tmp/site.tar.gz -C site
+          test -f site/index.html
+          test -f site/heroes/anubarak.html
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: out
+          path: site
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
