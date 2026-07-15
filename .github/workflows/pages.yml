@@ -40,6 +40,9 @@ jobs:
         with:
           path: site
 
+      - name: Let the legacy branch-source build finish
+        run: sleep 30
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
