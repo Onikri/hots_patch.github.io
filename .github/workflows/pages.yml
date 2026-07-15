@@ -1,4 +1,4 @@
-name: Deploy Tank guide to GitHub Pages
+name: Deploy complete Tank guide to GitHub Pages
 
 on:
   push:
@@ -24,13 +24,18 @@ jobs:
       - name: Checkout deployment package
         uses: actions/checkout@v4
 
-      - name: Restore optimized static site
+      - name: Restore complete local site
         run: |
           mkdir site
           cat deploy/site.tar.gz.part-* > /tmp/site.tar.gz
-          tar -xzf /tmp/site.tar.gz -C site
+          cd /tmp
+          sha256sum -c "$GITHUB_WORKSPACE/deploy/site.tar.gz.sha256"
+          tar -xzf site.tar.gz -C "$GITHUB_WORKSPACE/site"
+          cd "$GITHUB_WORKSPACE"
           test -f site/index.html
           test -f site/heroes/anubarak.html
+          test -d site/asset-library/assets
+          test -f site/asset-library/embeds/heroes/anubarak.html
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
