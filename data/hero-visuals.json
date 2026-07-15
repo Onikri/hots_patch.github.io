@@ -1,0 +1,1336 @@
+{
+  "anubarak": {
+    "abilities": [
+      {
+        "title": "Пронзание [Q]",
+        "page": 122,
+        "src": "/heroes/visuals/anubarak/abilities-01.webp",
+        "thumb": "/heroes/visuals/anubarak/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Укрепленный панцирь [W]",
+        "page": 124,
+        "src": "/heroes/visuals/anubarak/abilities-02.webp",
+        "thumb": "/heroes/visuals/anubarak/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Подземный рывок [E]",
+        "page": 125,
+        "src": "/heroes/visuals/anubarak/abilities-03.webp",
+        "thumb": "/heroes/visuals/anubarak/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Хозяин скарабеев [D]",
+        "page": 127,
+        "src": "/heroes/visuals/anubarak/abilities-04.webp",
+        "thumb": "/heroes/visuals/anubarak/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Кокон [R]",
+        "page": 129,
+        "src": "/heroes/visuals/anubarak/abilities-05.webp",
+        "thumb": "/heroes/visuals/anubarak/abilities-05-thumb.webp"
+      },
+      {
+        "title": "Рой саранчи [R]",
+        "page": 131,
+        "src": "/heroes/visuals/anubarak/abilities-06.webp",
+        "thumb": "/heroes/visuals/anubarak/abilities-06-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 133,
+        "src": "/heroes/visuals/anubarak/talents-01.webp",
+        "thumb": "/heroes/visuals/anubarak/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 134,
+        "src": "/heroes/visuals/anubarak/talents-02.webp",
+        "thumb": "/heroes/visuals/anubarak/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 135,
+        "src": "/heroes/visuals/anubarak/talents-03.webp",
+        "thumb": "/heroes/visuals/anubarak/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 136,
+        "src": "/heroes/visuals/anubarak/talents-04.webp",
+        "thumb": "/heroes/visuals/anubarak/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 137,
+        "src": "/heroes/visuals/anubarak/talents-05.webp",
+        "thumb": "/heroes/visuals/anubarak/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 138,
+        "src": "/heroes/visuals/anubarak/talents-06.webp",
+        "thumb": "/heroes/visuals/anubarak/talents-06-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Осторожный вход (базовая связка)",
+        "page": 142,
+        "src": "/heroes/visuals/anubarak/combos-01.webp",
+        "thumb": "/heroes/visuals/anubarak/combos-01-thumb.webp"
+      },
+      {
+        "title": "Жесткий вход (базовая связка)",
+        "page": 143,
+        "src": "/heroes/visuals/anubarak/combos-02.webp",
+        "thumb": "/heroes/visuals/anubarak/combos-02-thumb.webp"
+      },
+      {
+        "title": "Изоляция (ультимейт)",
+        "page": 144,
+        "src": "/heroes/visuals/anubarak/combos-03.webp",
+        "thumb": "/heroes/visuals/anubarak/combos-03-thumb.webp"
+      },
+      {
+        "title": "Кокон с путами (талантовая связка)",
+        "page": 145,
+        "src": "/heroes/visuals/anubarak/combos-04.webp",
+        "thumb": "/heroes/visuals/anubarak/combos-04-thumb.webp"
+      }
+    ]
+  },
+  "arthas": {
+    "abilities": [
+      {
+        "title": "Лик смерти [Q]",
+        "page": 166,
+        "src": "/heroes/visuals/arthas/abilities-01.webp",
+        "thumb": "/heroes/visuals/arthas/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Воющий ветер [W]",
+        "page": 167,
+        "src": "/heroes/visuals/arthas/abilities-02.webp",
+        "thumb": "/heroes/visuals/arthas/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Ледяная буря [E]",
+        "page": 168,
+        "src": "/heroes/visuals/arthas/abilities-03.webp",
+        "thumb": "/heroes/visuals/arthas/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Жажда Ледяной Скорби [D]",
+        "page": 170,
+        "src": "/heroes/visuals/arthas/abilities-04.webp",
+        "thumb": "/heroes/visuals/arthas/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Войско мертвых [R]",
+        "page": 172,
+        "src": "/heroes/visuals/arthas/abilities-05.webp",
+        "thumb": "/heroes/visuals/arthas/abilities-05-thumb.webp"
+      },
+      {
+        "title": "Призыв Синдрагосы [R]",
+        "page": 174,
+        "src": "/heroes/visuals/arthas/abilities-06.webp",
+        "thumb": "/heroes/visuals/arthas/abilities-06-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 176,
+        "src": "/heroes/visuals/arthas/talents-01.webp",
+        "thumb": "/heroes/visuals/arthas/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 177,
+        "src": "/heroes/visuals/arthas/talents-02.webp",
+        "thumb": "/heroes/visuals/arthas/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 178,
+        "src": "/heroes/visuals/arthas/talents-03.webp",
+        "thumb": "/heroes/visuals/arthas/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 179,
+        "src": "/heroes/visuals/arthas/talents-04.webp",
+        "thumb": "/heroes/visuals/arthas/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 181,
+        "src": "/heroes/visuals/arthas/talents-05.webp",
+        "thumb": "/heroes/visuals/arthas/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 182,
+        "src": "/heroes/visuals/arthas/talents-06.webp",
+        "thumb": "/heroes/visuals/arthas/talents-06-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Два удара (микро-связка)",
+        "page": 186,
+        "src": "/heroes/visuals/arthas/combos-01.webp",
+        "thumb": "/heroes/visuals/arthas/combos-01-thumb.webp"
+      },
+      {
+        "title": "Синдрагоса (ультимейт)",
+        "page": 187,
+        "src": "/heroes/visuals/arthas/combos-02.webp",
+        "thumb": "/heroes/visuals/arthas/combos-02-thumb.webp"
+      },
+      {
+        "title": "Вурдалаки (ультимейт)",
+        "page": 188,
+        "src": "/heroes/visuals/arthas/combos-03.webp",
+        "thumb": "/heroes/visuals/arthas/combos-03-thumb.webp"
+      },
+      {
+        "title": "Пил (защитная связка)",
+        "page": 189,
+        "src": "/heroes/visuals/arthas/combos-04.webp",
+        "thumb": "/heroes/visuals/arthas/combos-04-thumb.webp"
+      }
+    ]
+  },
+  "johanna": {
+    "abilities": [
+      {
+        "title": "Наказание [Q]",
+        "page": 214,
+        "src": "/heroes/visuals/johanna/abilities-01.webp",
+        "thumb": "/heroes/visuals/johanna/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Порицание [W]",
+        "page": 215,
+        "src": "/heroes/visuals/johanna/abilities-02.webp",
+        "thumb": "/heroes/visuals/johanna/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Сияющий щит [E]",
+        "page": 216,
+        "src": "/heroes/visuals/johanna/abilities-03.webp",
+        "thumb": "/heroes/visuals/johanna/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Освященный щит [R]",
+        "page": 217,
+        "src": "/heroes/visuals/johanna/abilities-04.webp",
+        "thumb": "/heroes/visuals/johanna/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Падающий меч [R]",
+        "page": 218,
+        "src": "/heroes/visuals/johanna/abilities-05.webp",
+        "thumb": "/heroes/visuals/johanna/abilities-05-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 219,
+        "src": "/heroes/visuals/johanna/talents-01.webp",
+        "thumb": "/heroes/visuals/johanna/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 220,
+        "src": "/heroes/visuals/johanna/talents-02.webp",
+        "thumb": "/heroes/visuals/johanna/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 221,
+        "src": "/heroes/visuals/johanna/talents-03.webp",
+        "thumb": "/heroes/visuals/johanna/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 222,
+        "src": "/heroes/visuals/johanna/talents-04.webp",
+        "thumb": "/heroes/visuals/johanna/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 223,
+        "src": "/heroes/visuals/johanna/talents-05.webp",
+        "thumb": "/heroes/visuals/johanna/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 224,
+        "src": "/heroes/visuals/johanna/talents-06.webp",
+        "thumb": "/heroes/visuals/johanna/talents-06-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 07",
+        "page": 225,
+        "src": "/heroes/visuals/johanna/talents-07.webp",
+        "thumb": "/heroes/visuals/johanna/talents-07-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Стяжка (базовая связка)",
+        "page": 229,
+        "src": "/heroes/visuals/johanna/combos-01.webp",
+        "thumb": "/heroes/visuals/johanna/combos-01-thumb.webp"
+      },
+      {
+        "title": "Щит (ультимейт)",
+        "page": 230,
+        "src": "/heroes/visuals/johanna/combos-02.webp",
+        "thumb": "/heroes/visuals/johanna/combos-02-thumb.webp"
+      },
+      {
+        "title": "Меч (ультимейт)",
+        "page": 231,
+        "src": "/heroes/visuals/johanna/combos-03.webp",
+        "thumb": "/heroes/visuals/johanna/combos-03-thumb.webp"
+      },
+      {
+        "title": "Пил (защитная связка)",
+        "page": 232,
+        "src": "/heroes/visuals/johanna/combos-04.webp",
+        "thumb": "/heroes/visuals/johanna/combos-04-thumb.webp"
+      }
+    ]
+  },
+  "diablo": {
+    "abilities": [
+      {
+        "title": "Натиск Тени [Q]",
+        "page": 255,
+        "src": "/heroes/visuals/diablo/abilities-01.webp",
+        "thumb": "/heroes/visuals/diablo/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Огненный топот [W]",
+        "page": 257,
+        "src": "/heroes/visuals/diablo/abilities-02.webp",
+        "thumb": "/heroes/visuals/diablo/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Сверхсила [E]",
+        "page": 259,
+        "src": "/heroes/visuals/diablo/abilities-03.webp",
+        "thumb": "/heroes/visuals/diablo/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Апокалипсис [R]",
+        "page": 261,
+        "src": "/heroes/visuals/diablo/abilities-04.webp",
+        "thumb": "/heroes/visuals/diablo/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Электрическое дыхание [R]",
+        "page": 263,
+        "src": "/heroes/visuals/diablo/abilities-05.webp",
+        "thumb": "/heroes/visuals/diablo/abilities-05-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 265,
+        "src": "/heroes/visuals/diablo/talents-01.webp",
+        "thumb": "/heroes/visuals/diablo/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 266,
+        "src": "/heroes/visuals/diablo/talents-02.webp",
+        "thumb": "/heroes/visuals/diablo/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 267,
+        "src": "/heroes/visuals/diablo/talents-03.webp",
+        "thumb": "/heroes/visuals/diablo/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 268,
+        "src": "/heroes/visuals/diablo/talents-04.webp",
+        "thumb": "/heroes/visuals/diablo/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 269,
+        "src": "/heroes/visuals/diablo/talents-05.webp",
+        "thumb": "/heroes/visuals/diablo/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 270,
+        "src": "/heroes/visuals/diablo/talents-06.webp",
+        "thumb": "/heroes/visuals/diablo/talents-06-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Стенка (базовая связка)",
+        "page": 275,
+        "src": "/heroes/visuals/diablo/combos-01.webp",
+        "thumb": "/heroes/visuals/diablo/combos-01-thumb.webp"
+      },
+      {
+        "title": "Апокалипсис (ультимейт)",
+        "page": 276,
+        "src": "/heroes/visuals/diablo/combos-02.webp",
+        "thumb": "/heroes/visuals/diablo/combos-02-thumb.webp"
+      },
+      {
+        "title": "Господство (талантовая связка)",
+        "page": 277,
+        "src": "/heroes/visuals/diablo/combos-03.webp",
+        "thumb": "/heroes/visuals/diablo/combos-03-thumb.webp"
+      },
+      {
+        "title": "Дыхание (ультимейт)",
+        "page": 278,
+        "src": "/heroes/visuals/diablo/combos-04.webp",
+        "thumb": "/heroes/visuals/diablo/combos-04-thumb.webp"
+      }
+    ]
+  },
+  "blaze": {
+    "abilities": [
+      {
+        "title": "Струя пламени [Q]",
+        "page": 297,
+        "src": "/heroes/visuals/blaze/abilities-01.webp",
+        "thumb": "/heroes/visuals/blaze/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Лужа мазута [W]",
+        "page": 298,
+        "src": "/heroes/visuals/blaze/abilities-02.webp",
+        "thumb": "/heroes/visuals/blaze/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Реактивная тяга [E]",
+        "page": 299,
+        "src": "/heroes/visuals/blaze/abilities-03.webp",
+        "thumb": "/heroes/visuals/blaze/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Реактивная тяга [E] · продолжение",
+        "page": 300,
+        "src": "/heroes/visuals/blaze/abilities-04.webp",
+        "thumb": "/heroes/visuals/blaze/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Возгорание [R]",
+        "page": 302,
+        "src": "/heroes/visuals/blaze/abilities-05.webp",
+        "thumb": "/heroes/visuals/blaze/abilities-05-thumb.webp"
+      },
+      {
+        "title": "Вызов бункера [R]",
+        "page": 304,
+        "src": "/heroes/visuals/blaze/abilities-06.webp",
+        "thumb": "/heroes/visuals/blaze/abilities-06-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 306,
+        "src": "/heroes/visuals/blaze/talents-01.webp",
+        "thumb": "/heroes/visuals/blaze/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 307,
+        "src": "/heroes/visuals/blaze/talents-02.webp",
+        "thumb": "/heroes/visuals/blaze/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 308,
+        "src": "/heroes/visuals/blaze/talents-03.webp",
+        "thumb": "/heroes/visuals/blaze/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 309,
+        "src": "/heroes/visuals/blaze/talents-04.webp",
+        "thumb": "/heroes/visuals/blaze/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 310,
+        "src": "/heroes/visuals/blaze/talents-05.webp",
+        "thumb": "/heroes/visuals/blaze/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 311,
+        "src": "/heroes/visuals/blaze/talents-06.webp",
+        "thumb": "/heroes/visuals/blaze/talents-06-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 07",
+        "page": 312,
+        "src": "/heroes/visuals/blaze/talents-07.webp",
+        "thumb": "/heroes/visuals/blaze/talents-07-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Отсечка (базовая связка)",
+        "page": 316,
+        "src": "/heroes/visuals/blaze/combos-01.webp",
+        "thumb": "/heroes/visuals/blaze/combos-01-thumb.webp"
+      },
+      {
+        "title": "Врыв (базовая связка)",
+        "page": 317,
+        "src": "/heroes/visuals/blaze/combos-02.webp",
+        "thumb": "/heroes/visuals/blaze/combos-02-thumb.webp"
+      },
+      {
+        "title": "Бункер (ультимейт)",
+        "page": 318,
+        "src": "/heroes/visuals/blaze/combos-03.webp",
+        "thumb": "/heroes/visuals/blaze/combos-03-thumb.webp"
+      },
+      {
+        "title": "Возгорание (ультимейт)",
+        "page": 319,
+        "src": "/heroes/visuals/blaze/combos-04.webp",
+        "thumb": "/heroes/visuals/blaze/combos-04-thumb.webp"
+      }
+    ]
+  },
+  "garrosh": {
+    "abilities": [
+      {
+        "title": "Землелом [Q]",
+        "page": 337,
+        "src": "/heroes/visuals/garrosh/abilities-01.webp",
+        "thumb": "/heroes/visuals/garrosh/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Кровожадность [W]",
+        "page": 339,
+        "src": "/heroes/visuals/garrosh/abilities-02.webp",
+        "thumb": "/heroes/visuals/garrosh/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Живой снаряд [E]",
+        "page": 341,
+        "src": "/heroes/visuals/garrosh/abilities-03.webp",
+        "thumb": "/heroes/visuals/garrosh/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Вызов вождя [R]",
+        "page": 343,
+        "src": "/heroes/visuals/garrosh/abilities-04.webp",
+        "thumb": "/heroes/visuals/garrosh/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Истребление [R]",
+        "page": 345,
+        "src": "/heroes/visuals/garrosh/abilities-05.webp",
+        "thumb": "/heroes/visuals/garrosh/abilities-05-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 347,
+        "src": "/heroes/visuals/garrosh/talents-01.webp",
+        "thumb": "/heroes/visuals/garrosh/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 348,
+        "src": "/heroes/visuals/garrosh/talents-02.webp",
+        "thumb": "/heroes/visuals/garrosh/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 349,
+        "src": "/heroes/visuals/garrosh/talents-03.webp",
+        "thumb": "/heroes/visuals/garrosh/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 350,
+        "src": "/heroes/visuals/garrosh/talents-04.webp",
+        "thumb": "/heroes/visuals/garrosh/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 351,
+        "src": "/heroes/visuals/garrosh/talents-05.webp",
+        "thumb": "/heroes/visuals/garrosh/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 352,
+        "src": "/heroes/visuals/garrosh/talents-06.webp",
+        "thumb": "/heroes/visuals/garrosh/talents-06-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Q-E (базовая связка)",
+        "page": 356,
+        "src": "/heroes/visuals/garrosh/combos-01.webp",
+        "thumb": "/heroes/visuals/garrosh/combos-01-thumb.webp"
+      },
+      {
+        "title": "E-Q (базовая связка)",
+        "page": 357,
+        "src": "/heroes/visuals/garrosh/combos-02.webp",
+        "thumb": "/heroes/visuals/garrosh/combos-02-thumb.webp"
+      },
+      {
+        "title": "Антидайв (защитная связка)",
+        "page": 358,
+        "src": "/heroes/visuals/garrosh/combos-03.webp",
+        "thumb": "/heroes/visuals/garrosh/combos-03-thumb.webp"
+      },
+      {
+        "title": "Два броска (талантовая связка)",
+        "page": 359,
+        "src": "/heroes/visuals/garrosh/combos-04.webp",
+        "thumb": "/heroes/visuals/garrosh/combos-04-thumb.webp"
+      }
+    ]
+  },
+  "etc": {
+    "abilities": [
+      {
+        "title": "Выкат [Q]",
+        "page": 378,
+        "src": "/heroes/visuals/etc/abilities-01.webp",
+        "thumb": "/heroes/visuals/etc/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Вынос мозга [W]",
+        "page": 380,
+        "src": "/heroes/visuals/etc/abilities-02.webp",
+        "thumb": "/heroes/visuals/etc/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Соло на гитаре [E]",
+        "page": 382,
+        "src": "/heroes/visuals/etc/abilities-03.webp",
+        "thumb": "/heroes/visuals/etc/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Мош-пит [R]",
+        "page": 384,
+        "src": "/heroes/visuals/etc/abilities-04.webp",
+        "thumb": "/heroes/visuals/etc/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Прыжок со сцены [R]",
+        "page": 386,
+        "src": "/heroes/visuals/etc/abilities-05.webp",
+        "thumb": "/heroes/visuals/etc/abilities-05-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 388,
+        "src": "/heroes/visuals/etc/talents-01.webp",
+        "thumb": "/heroes/visuals/etc/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 389,
+        "src": "/heroes/visuals/etc/talents-02.webp",
+        "thumb": "/heroes/visuals/etc/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 390,
+        "src": "/heroes/visuals/etc/talents-03.webp",
+        "thumb": "/heroes/visuals/etc/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 391,
+        "src": "/heroes/visuals/etc/talents-04.webp",
+        "thumb": "/heroes/visuals/etc/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 392,
+        "src": "/heroes/visuals/etc/talents-05.webp",
+        "thumb": "/heroes/visuals/etc/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 393,
+        "src": "/heroes/visuals/etc/talents-06.webp",
+        "thumb": "/heroes/visuals/etc/talents-06-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Базовый врыв (базовая связка)",
+        "page": 397,
+        "src": "/heroes/visuals/etc/combos-01.webp",
+        "thumb": "/heroes/visuals/etc/combos-01-thumb.webp"
+      },
+      {
+        "title": "Обратный пинок (микро-связка)",
+        "page": 398,
+        "src": "/heroes/visuals/etc/combos-02.webp",
+        "thumb": "/heroes/visuals/etc/combos-02-thumb.webp"
+      },
+      {
+        "title": "Мош-пит (ультимейт)",
+        "page": 399,
+        "src": "/heroes/visuals/etc/combos-03.webp",
+        "thumb": "/heroes/visuals/etc/combos-03-thumb.webp"
+      },
+      {
+        "title": "Прыжок (ультимейт)",
+        "page": 400,
+        "src": "/heroes/visuals/etc/combos-04.webp",
+        "thumb": "/heroes/visuals/etc/combos-04-thumb.webp"
+      }
+    ]
+  },
+  "malganis": {
+    "abilities": [
+      {
+        "title": "Когти Скверны [Q]",
+        "page": 419,
+        "src": "/heroes/visuals/malganis/abilities-01.webp",
+        "thumb": "/heroes/visuals/malganis/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Объятия смерти [W]",
+        "page": 421,
+        "src": "/heroes/visuals/malganis/abilities-02.webp",
+        "thumb": "/heroes/visuals/malganis/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Крылья ночи [E]",
+        "page": 422,
+        "src": "/heroes/visuals/malganis/abilities-03.webp",
+        "thumb": "/heroes/visuals/malganis/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Гибельная стая [R]",
+        "page": 424,
+        "src": "/heroes/visuals/malganis/abilities-04.webp",
+        "thumb": "/heroes/visuals/malganis/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Темный обмен [R]",
+        "page": 426,
+        "src": "/heroes/visuals/malganis/abilities-05.webp",
+        "thumb": "/heroes/visuals/malganis/abilities-05-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 428,
+        "src": "/heroes/visuals/malganis/talents-01.webp",
+        "thumb": "/heroes/visuals/malganis/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 429,
+        "src": "/heroes/visuals/malganis/talents-02.webp",
+        "thumb": "/heroes/visuals/malganis/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 430,
+        "src": "/heroes/visuals/malganis/talents-03.webp",
+        "thumb": "/heroes/visuals/malganis/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 431,
+        "src": "/heroes/visuals/malganis/talents-04.webp",
+        "thumb": "/heroes/visuals/malganis/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 432,
+        "src": "/heroes/visuals/malganis/talents-05.webp",
+        "thumb": "/heroes/visuals/malganis/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 433,
+        "src": "/heroes/visuals/malganis/talents-06.webp",
+        "thumb": "/heroes/visuals/malganis/talents-06-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 07",
+        "page": 434,
+        "src": "/heroes/visuals/malganis/talents-07.webp",
+        "thumb": "/heroes/visuals/malganis/talents-07-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Сон-стан (базовая связка)",
+        "page": 438,
+        "src": "/heroes/visuals/malganis/combos-01.webp",
+        "thumb": "/heroes/visuals/malganis/combos-01-thumb.webp"
+      },
+      {
+        "title": "Нетопырь (талантовая связка)",
+        "page": 439,
+        "src": "/heroes/visuals/malganis/combos-02.webp",
+        "thumb": "/heroes/visuals/malganis/combos-02-thumb.webp"
+      },
+      {
+        "title": "Родная стая (ультимейт)",
+        "page": 440,
+        "src": "/heroes/visuals/malganis/combos-03.webp",
+        "thumb": "/heroes/visuals/malganis/combos-03-thumb.webp"
+      },
+      {
+        "title": "Обмен (ультимейт)",
+        "page": 441,
+        "src": "/heroes/visuals/malganis/combos-04.webp",
+        "thumb": "/heroes/visuals/malganis/combos-04-thumb.webp"
+      }
+    ]
+  },
+  "mei": {
+    "abilities": [
+      {
+        "title": "Снежная слепота [Q]",
+        "page": 459,
+        "src": "/heroes/visuals/mei/abilities-01.webp",
+        "thumb": "/heroes/visuals/mei/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Вьюга [W]",
+        "page": 460,
+        "src": "/heroes/visuals/mei/abilities-02.webp",
+        "thumb": "/heroes/visuals/mei/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Гололед [E]",
+        "page": 462,
+        "src": "/heroes/visuals/mei/abilities-03.webp",
+        "thumb": "/heroes/visuals/mei/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Лавина [R]",
+        "page": 464,
+        "src": "/heroes/visuals/mei/abilities-04.webp",
+        "thumb": "/heroes/visuals/mei/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Ледяная стена [R]",
+        "page": 466,
+        "src": "/heroes/visuals/mei/abilities-05.webp",
+        "thumb": "/heroes/visuals/mei/abilities-05-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 468,
+        "src": "/heroes/visuals/mei/talents-01.webp",
+        "thumb": "/heroes/visuals/mei/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 469,
+        "src": "/heroes/visuals/mei/talents-02.webp",
+        "thumb": "/heroes/visuals/mei/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 470,
+        "src": "/heroes/visuals/mei/talents-03.webp",
+        "thumb": "/heroes/visuals/mei/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 471,
+        "src": "/heroes/visuals/mei/talents-04.webp",
+        "thumb": "/heroes/visuals/mei/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 472,
+        "src": "/heroes/visuals/mei/talents-05.webp",
+        "thumb": "/heroes/visuals/mei/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 473,
+        "src": "/heroes/visuals/mei/talents-06.webp",
+        "thumb": "/heroes/visuals/mei/talents-06-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Вьюга (базовая связка)",
+        "page": 478,
+        "src": "/heroes/visuals/mei/combos-01.webp",
+        "thumb": "/heroes/visuals/mei/combos-01-thumb.webp"
+      },
+      {
+        "title": "Лавина (ультимейт)",
+        "page": 479,
+        "src": "/heroes/visuals/mei/combos-02.webp",
+        "thumb": "/heroes/visuals/mei/combos-02-thumb.webp"
+      },
+      {
+        "title": "Стена (ультимейт)",
+        "page": 480,
+        "src": "/heroes/visuals/mei/combos-03.webp",
+        "thumb": "/heroes/visuals/mei/combos-03-thumb.webp"
+      },
+      {
+        "title": "Защита (защитная связка)",
+        "page": 481,
+        "src": "/heroes/visuals/mei/combos-04.webp",
+        "thumb": "/heroes/visuals/mei/combos-04-thumb.webp"
+      }
+    ]
+  },
+  "muradin": {
+    "abilities": [
+      {
+        "title": "Грозовой молот [Q]",
+        "page": 500,
+        "src": "/heroes/visuals/muradin/abilities-01.webp",
+        "thumb": "/heroes/visuals/muradin/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Раскат грома [W]",
+        "page": 501,
+        "src": "/heroes/visuals/muradin/abilities-02.webp",
+        "thumb": "/heroes/visuals/muradin/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Дворфийский прыжок [E]",
+        "page": 503,
+        "src": "/heroes/visuals/muradin/abilities-03.webp",
+        "thumb": "/heroes/visuals/muradin/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Второе дыхание [D]",
+        "page": 504,
+        "src": "/heroes/visuals/muradin/abilities-04.webp",
+        "thumb": "/heroes/visuals/muradin/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Аватара [R]",
+        "page": 506,
+        "src": "/heroes/visuals/muradin/abilities-05.webp",
+        "thumb": "/heroes/visuals/muradin/abilities-05-thumb.webp"
+      },
+      {
+        "title": "Ошеломляющий удар [R]",
+        "page": 508,
+        "src": "/heroes/visuals/muradin/abilities-06.webp",
+        "thumb": "/heroes/visuals/muradin/abilities-06-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 510,
+        "src": "/heroes/visuals/muradin/talents-01.webp",
+        "thumb": "/heroes/visuals/muradin/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 511,
+        "src": "/heroes/visuals/muradin/talents-02.webp",
+        "thumb": "/heroes/visuals/muradin/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 512,
+        "src": "/heroes/visuals/muradin/talents-03.webp",
+        "thumb": "/heroes/visuals/muradin/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 513,
+        "src": "/heroes/visuals/muradin/talents-04.webp",
+        "thumb": "/heroes/visuals/muradin/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 514,
+        "src": "/heroes/visuals/muradin/talents-05.webp",
+        "thumb": "/heroes/visuals/muradin/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 515,
+        "src": "/heroes/visuals/muradin/talents-06.webp",
+        "thumb": "/heroes/visuals/muradin/talents-06-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Пеший вход (базовая связка)",
+        "page": 519,
+        "src": "/heroes/visuals/muradin/combos-01.webp",
+        "thumb": "/heroes/visuals/muradin/combos-01-thumb.webp"
+      },
+      {
+        "title": "Пинок (ультимейт)",
+        "page": 520,
+        "src": "/heroes/visuals/muradin/combos-02.webp",
+        "thumb": "/heroes/visuals/muradin/combos-02-thumb.webp"
+      },
+      {
+        "title": "Каменная форма (талантовая связка)",
+        "page": 521,
+        "src": "/heroes/visuals/muradin/combos-03.webp",
+        "thumb": "/heroes/visuals/muradin/combos-03-thumb.webp"
+      },
+      {
+        "title": "Аватара (ультимейт)",
+        "page": 522,
+        "src": "/heroes/visuals/muradin/combos-04.webp",
+        "thumb": "/heroes/visuals/muradin/combos-04-thumb.webp"
+      }
+    ]
+  },
+  "stitches": {
+    "abilities": [
+      {
+        "title": "Крюк [Q]",
+        "page": 541,
+        "src": "/heroes/visuals/stitches/abilities-01.webp",
+        "thumb": "/heroes/visuals/stitches/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Сильный удар [W]",
+        "page": 542,
+        "src": "/heroes/visuals/stitches/abilities-02.webp",
+        "thumb": "/heroes/visuals/stitches/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Пожирание [E]",
+        "page": 543,
+        "src": "/heroes/visuals/stitches/abilities-03.webp",
+        "thumb": "/heroes/visuals/stitches/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Шаркающий ужас [D]",
+        "page": 544,
+        "src": "/heroes/visuals/stitches/abilities-04.webp",
+        "thumb": "/heroes/visuals/stitches/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Гнилая желчь [R]",
+        "page": 546,
+        "src": "/heroes/visuals/stitches/abilities-05.webp",
+        "thumb": "/heroes/visuals/stitches/abilities-05-thumb.webp"
+      },
+      {
+        "title": "Заглатывание [R]",
+        "page": 547,
+        "src": "/heroes/visuals/stitches/abilities-06.webp",
+        "thumb": "/heroes/visuals/stitches/abilities-06-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 549,
+        "src": "/heroes/visuals/stitches/talents-01.webp",
+        "thumb": "/heroes/visuals/stitches/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 550,
+        "src": "/heroes/visuals/stitches/talents-02.webp",
+        "thumb": "/heroes/visuals/stitches/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 551,
+        "src": "/heroes/visuals/stitches/talents-03.webp",
+        "thumb": "/heroes/visuals/stitches/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 552,
+        "src": "/heroes/visuals/stitches/talents-04.webp",
+        "thumb": "/heroes/visuals/stitches/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 553,
+        "src": "/heroes/visuals/stitches/talents-05.webp",
+        "thumb": "/heroes/visuals/stitches/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 554,
+        "src": "/heroes/visuals/stitches/talents-06.webp",
+        "thumb": "/heroes/visuals/stitches/talents-06-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 07",
+        "page": 555,
+        "src": "/heroes/visuals/stitches/talents-07.webp",
+        "thumb": "/heroes/visuals/stitches/talents-07-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Хук (базовая связка)",
+        "page": 559,
+        "src": "/heroes/visuals/stitches/combos-01.webp",
+        "thumb": "/heroes/visuals/stitches/combos-01-thumb.webp"
+      },
+      {
+        "title": "Похищение (ультимейт)",
+        "page": 560,
+        "src": "/heroes/visuals/stitches/combos-02.webp",
+        "thumb": "/heroes/visuals/stitches/combos-02-thumb.webp"
+      },
+      {
+        "title": "Спасающий крюк (защитная связка)",
+        "page": 561,
+        "src": "/heroes/visuals/stitches/combos-03.webp",
+        "thumb": "/heroes/visuals/stitches/combos-03-thumb.webp"
+      },
+      {
+        "title": "Антидайв (защитная связка)",
+        "page": 562,
+        "src": "/heroes/visuals/stitches/combos-04.webp",
+        "thumb": "/heroes/visuals/stitches/combos-04-thumb.webp"
+      }
+    ]
+  },
+  "tyrael": {
+    "abilities": [
+      {
+        "title": "Мощь Эл'друина [Q]",
+        "page": 581,
+        "src": "/heroes/visuals/tyrael/abilities-01.webp",
+        "thumb": "/heroes/visuals/tyrael/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Праведность [W]",
+        "page": 582,
+        "src": "/heroes/visuals/tyrael/abilities-02.webp",
+        "thumb": "/heroes/visuals/tyrael/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Кара [E]",
+        "page": 583,
+        "src": "/heroes/visuals/tyrael/abilities-03.webp",
+        "thumb": "/heroes/visuals/tyrael/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Освящение [R]",
+        "page": 585,
+        "src": "/heroes/visuals/tyrael/abilities-04.webp",
+        "thumb": "/heroes/visuals/tyrael/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Осуждение [R]",
+        "page": 587,
+        "src": "/heroes/visuals/tyrael/abilities-05.webp",
+        "thumb": "/heroes/visuals/tyrael/abilities-05-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 589,
+        "src": "/heroes/visuals/tyrael/talents-01.webp",
+        "thumb": "/heroes/visuals/tyrael/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 590,
+        "src": "/heroes/visuals/tyrael/talents-02.webp",
+        "thumb": "/heroes/visuals/tyrael/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 591,
+        "src": "/heroes/visuals/tyrael/talents-03.webp",
+        "thumb": "/heroes/visuals/tyrael/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 592,
+        "src": "/heroes/visuals/tyrael/talents-04.webp",
+        "thumb": "/heroes/visuals/tyrael/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 593,
+        "src": "/heroes/visuals/tyrael/talents-05.webp",
+        "thumb": "/heroes/visuals/tyrael/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 594,
+        "src": "/heroes/visuals/tyrael/talents-06.webp",
+        "thumb": "/heroes/visuals/tyrael/talents-06-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Якорь (базовая связка)",
+        "page": 598,
+        "src": "/heroes/visuals/tyrael/combos-01.webp",
+        "thumb": "/heroes/visuals/tyrael/combos-01-thumb.webp"
+      },
+      {
+        "title": "Освящение (ультимейт)",
+        "page": 599,
+        "src": "/heroes/visuals/tyrael/combos-02.webp",
+        "thumb": "/heroes/visuals/tyrael/combos-02-thumb.webp"
+      },
+      {
+        "title": "Осуждение (ультимейт)",
+        "page": 600,
+        "src": "/heroes/visuals/tyrael/combos-03.webp",
+        "thumb": "/heroes/visuals/tyrael/combos-03-thumb.webp"
+      },
+      {
+        "title": "Пил (защитная связка)",
+        "page": 601,
+        "src": "/heroes/visuals/tyrael/combos-04.webp",
+        "thumb": "/heroes/visuals/tyrael/combos-04-thumb.webp"
+      }
+    ]
+  },
+  "varian": {
+    "abilities": [
+      {
+        "title": "Львиный клык [Q]",
+        "page": 620,
+        "src": "/heroes/visuals/varian/abilities-01.webp",
+        "thumb": "/heroes/visuals/varian/abilities-01-thumb.webp"
+      },
+      {
+        "title": "Парирование [W]",
+        "page": 621,
+        "src": "/heroes/visuals/varian/abilities-02.webp",
+        "thumb": "/heroes/visuals/varian/abilities-02-thumb.webp"
+      },
+      {
+        "title": "Рывок [E]",
+        "page": 622,
+        "src": "/heroes/visuals/varian/abilities-03.webp",
+        "thumb": "/heroes/visuals/varian/abilities-03-thumb.webp"
+      },
+      {
+        "title": "Героический удар [D]",
+        "page": 623,
+        "src": "/heroes/visuals/varian/abilities-04.webp",
+        "thumb": "/heroes/visuals/varian/abilities-04-thumb.webp"
+      },
+      {
+        "title": "Провокация [R]",
+        "page": 625,
+        "src": "/heroes/visuals/varian/abilities-05.webp",
+        "thumb": "/heroes/visuals/varian/abilities-05-thumb.webp"
+      }
+    ],
+    "talents": [
+      {
+        "title": "Таланты и адаптация · 01",
+        "page": 627,
+        "src": "/heroes/visuals/varian/talents-01.webp",
+        "thumb": "/heroes/visuals/varian/talents-01-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 02",
+        "page": 628,
+        "src": "/heroes/visuals/varian/talents-02.webp",
+        "thumb": "/heroes/visuals/varian/talents-02-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 03",
+        "page": 629,
+        "src": "/heroes/visuals/varian/talents-03.webp",
+        "thumb": "/heroes/visuals/varian/talents-03-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 04",
+        "page": 630,
+        "src": "/heroes/visuals/varian/talents-04.webp",
+        "thumb": "/heroes/visuals/varian/talents-04-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 05",
+        "page": 631,
+        "src": "/heroes/visuals/varian/talents-05.webp",
+        "thumb": "/heroes/visuals/varian/talents-05-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 06",
+        "page": 632,
+        "src": "/heroes/visuals/varian/talents-06.webp",
+        "thumb": "/heroes/visuals/varian/talents-06-thumb.webp"
+      },
+      {
+        "title": "Таланты и адаптация · 07",
+        "page": 633,
+        "src": "/heroes/visuals/varian/talents-07.webp",
+        "thumb": "/heroes/visuals/varian/talents-07-thumb.webp"
+      }
+    ],
+    "combos": [
+      {
+        "title": "Провокация (базовая связка)",
+        "page": 637,
+        "src": "/heroes/visuals/varian/combos-01.webp",
+        "thumb": "/heroes/visuals/varian/combos-01-thumb.webp"
+      },
+      {
+        "title": "Пауза (микро-связка)",
+        "page": 638,
+        "src": "/heroes/visuals/varian/combos-02.webp",
+        "thumb": "/heroes/visuals/varian/combos-02-thumb.webp"
+      },
+      {
+        "title": "Под форт (дайв)",
+        "page": 639,
+        "src": "/heroes/visuals/varian/combos-03.webp",
+        "thumb": "/heroes/visuals/varian/combos-03-thumb.webp"
+      },
+      {
+        "title": "Срез дистанции (микро-связка)",
+        "page": 640,
+        "src": "/heroes/visuals/varian/combos-04.webp",
+        "thumb": "/heroes/visuals/varian/combos-04-thumb.webp"
+      }
+    ]
+  }
+}
