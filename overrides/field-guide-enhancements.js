@@ -13,7 +13,13 @@
   }
 
   function avatar(hero) {
-    var assetHero = hero === "valla" ? "demonhunter" : hero;
+    var avatarAliases = {
+      valla: "demonhunter",
+      blaze: "firebat",
+      etc: "l90etc",
+      mei: "meiow",
+    };
+    var assetHero = avatarAliases[hero] || hero;
     return asset(
       "/asset-library/assets/asset_library/hots/heroes/avatars/" +
         "storm_ui_glues_draft_portrait_" +
@@ -51,12 +57,19 @@
     anduin: "Андуин",
     anubarak: "Ануб'арак",
     arthas: "Артас",
+    blaze: "Блэйз",
     diablo: "Диабло",
+    etc: "E.T.C.",
     garrosh: "Гаррош",
     genji: "Гэндзи",
     johanna: "Джоанна",
     l90etc: "E.T.C.",
+    malganis: "Мал'Ганис",
+    mei: "Мэй",
     muradin: "Мурадин",
+    stitches: "Стежок",
+    tyrael: "Тираэль",
+    varian: "Вариан",
     valla: "Валла",
   };
 
@@ -269,6 +282,117 @@
     },
   };
 
+  Object.assign(TANK_ROSTER, {
+    arthas: {
+      id: "arthas",
+      name: "Артас",
+      speed: 4.8398,
+      radius: 0.8125,
+      abilities: [
+        { key: "q", name: "Лик смерти", icon: talentIcon("storm_ui_icon_arthas_deathcoil.png"), shape: "target", range: 8, castDelay: 0.15, outcome: "selfHeal", effect: "Выбери врага для урона или используй на себя для лечения." },
+        { key: "w", name: "Воющий ветер", icon: talentIcon("storm_ui_icon_arthas_howlingblast.png"), shape: "area", range: 10, radius: 2, castDelay: 0.15, outcome: "stun", effect: "Поставь корень с учётом задержки и движения цели." },
+        { key: "e", name: "Ледяная буря", icon: talentIcon("storm_ui_icon_arthas_frosentempest.png"), shape: "self", range: 3.5, castDelay: 0, outcome: "slow", effect: "Держи мобильных мили-героев внутри ауры замедления." },
+        { key: "r", name: "Призыв Синдрагосы", icon: talentIcon("storm_ui_icon_arthas_summonsindragosa.png"), shape: "line", range: 38, width: 8, castDelay: 0.6, outcome: "slow", effect: "Проведи широкую линию через приоритет и путь отступления." },
+      ],
+    },
+    blaze: {
+      id: "blaze",
+      name: "Блэйз",
+      speed: 4.8398,
+      radius: 0.9375,
+      abilities: [
+        { key: "q", name: "Струя пламени", icon: talentIcon("storm_ui_icon_blaze_flame.png"), shape: "line", range: 11.3, width: 0.86, castDelay: 0.125, outcome: "burn", effect: "Узкая линия: проведи обе струи через приоритетную цель." },
+        { key: "w", name: "Лужа мазута", icon: talentIcon("storm_ui_icon_blaze_oil.png"), shape: "area", range: 10, radius: 1.5, castDelay: 0.125, outcome: "slow", effect: "Поставь зону на путь движения, а не в текущую позицию." },
+        { key: "e", name: "Реактивная тяга", icon: talentIcon("storm_ui_icon_blaze_jet.png"), shape: "line", range: 9.8, width: 2.25, castDelay: 0.375, outcome: "charge", effect: "Рассчитай длинный разгон и зацепи нужного героя." },
+        { key: "r", name: "Возгорание", icon: talentIcon("storm_ui_icon_blaze_combustion.png"), shape: "self", range: 6.5, castDelay: 0.125, outcome: "slow", effect: "Войди в центр группы и накрой область вокруг Блэйза." },
+      ],
+    },
+    etc: {
+      id: "etc",
+      name: "E.T.C.",
+      speed: 4.8398,
+      radius: 0.9375,
+      abilities: [
+        { key: "q", name: "Выкат", icon: talentIcon("storm_ui_icon_etc_powerslide.png"), shape: "line", range: 8, width: 2, castDelay: 0, outcome: "charge", effect: "Пройди сквозь фронт так, чтобы линия задела приоритет." },
+        { key: "w", name: "Вынос мозга", icon: talentIcon("storm_ui_icon_etc_facemelt.png"), shape: "self", range: 4.4, castDelay: 0, outcome: "knockback", effect: "Оттолкни дайвера от союзника, не спасая основную цель врага." },
+        { key: "e", name: "Соло на гитаре", icon: talentIcon("storm_ui_icon_etc_guitarsolo.png"), shape: "self", range: 4.4, castDelay: 0, outcome: "selfHeal", effect: "Сохрани восстановление на момент ответного урона." },
+        { key: "r", name: "Мош-пит", icon: talentIcon("storm_ui_icon_etc_moshpit.png"), shape: "self", range: 4, castDelay: 0.75, outcome: "taunt", effect: "Накрой группу, но не начинай канал в готовый interrupt." },
+      ],
+    },
+    johanna: {
+      id: "johanna",
+      name: "Джоанна",
+      speed: 4.8398,
+      radius: 0.75,
+      abilities: [
+        { key: "q", name: "Наказание", icon: talentIcon("storm_ui_icon_johanna_punish.png"), shape: "cone", range: 3.5, angle: 160, castDelay: 0, outcome: "slow", effect: "Широкий ближний конус замедляет фронт и закрывает отход." },
+        { key: "w", name: "Порицание", icon: talentIcon("storm_ui_icon_johanna_condemn.png"), shape: "self", range: 5, castDelay: 0.75, outcome: "pull", effect: "Заранее займи центр группы до срабатывания стяжки." },
+        { key: "e", name: "Сияющий щит", icon: talentIcon("storm_ui_icon_johanna_shield_glare.png"), shape: "cone", range: 12, angle: 35, castDelay: 0.125, outcome: "stun", effect: "Узкий дальний конус: ослепи основной источник автоатак." },
+        { key: "r", name: "Освящённый щит", icon: talentIcon("storm_ui_icon_johanna_blessed_shield.png"), shape: "line", range: 11.3, width: 2, castDelay: 0.1, outcome: "stun", effect: "Попади первым отскоком в приоритетную цель." },
+      ],
+    },
+    malganis: {
+      id: "malganis",
+      name: "Мал'Ганис",
+      speed: 4.8398,
+      radius: 0.875,
+      abilities: [
+        { key: "q", name: "Когти Скверны", icon: talentIcon("storm_ui_icon_malganis_fel_1.png"), shape: "cone", range: 2.125, angle: 180, castDelay: 0, outcome: "stun", effect: "Три коротких рывка; третий удар должен подбросить приоритет." },
+        { key: "w", name: "Объятия смерти", icon: talentIcon("storm_ui_icon_malganis_necrotic.png"), shape: "self", range: 3.5, castDelay: 0, outcome: "selfHeal", effect: "Накрой ближайших врагов и получи броню перед ответом." },
+        { key: "e", name: "Крылья ночи", icon: talentIcon("storm_ui_icon_malganis_nightrush.png"), shape: "cone", range: 5.5, angle: 105, castDelay: 0.75, outcome: "stun", effect: "Проведи сон через группу после подготовки, не касаясь цели слишком рано." },
+        { key: "r", name: "Тёмный обмен", icon: talentIcon("storm_ui_icon_malganis_ult_conversion.png"), shape: "target", range: 3.75, castDelay: 0.75, outcome: "selfHeal", effect: "Выбери героя с высоким здоровьем только из безопасной позиции." },
+      ],
+    },
+    mei: {
+      id: "mei",
+      name: "Мэй",
+      speed: 4.8398,
+      radius: 0.875,
+      abilities: [
+        { key: "q", name: "Снежная слепота", icon: talentIcon("storm_ui_icon_mei_q_snowblind.png"), shape: "area", range: 9.75, radius: 2.25, castDelay: 0.125, outcome: "slow", effect: "Поставь область на автоатакера и зацепи центр хитбокса." },
+        { key: "w", name: "Вьюга", icon: talentIcon("storm_ui_icon_mei_w_blizzard.png"), shape: "area", range: 9, radius: 4, castDelay: 0.125, outcome: "stun", effect: "Предскажи позицию к финальному оглушению большой зоны." },
+        { key: "e", name: "Гололёд", icon: talentIcon("storm_ui_icon_mei_e1_slide.png"), shape: "line", range: 11, width: 2, castDelay: 0.125, outcome: "charge", effect: "Выбери линию рывка и остановись рядом с приоритетом." },
+        { key: "r", name: "Лавина", icon: talentIcon("storm_ui_icon_mei_r1_avalanche.png"), shape: "line", range: 23.5, width: 2.5, castDelay: 0.4375, outcome: "knockback", effect: "Поймай узкой волной важную цель, не забирая союзника из фокуса." },
+      ],
+    },
+    stitches: {
+      id: "stitches",
+      name: "Стежок",
+      speed: 4.8398,
+      radius: 1.0625,
+      abilities: [
+        { key: "q", name: "Крюк", icon: talentIcon("storm_ui_icon_stitches_hook.png"), shape: "line", range: 13.5, width: 1.25, castDelay: 0.2, projectileSpeed: 25, outcome: "pull", effect: "Первая цель блокирует крюк: найди чистую линию до приоритета." },
+        { key: "w", name: "Сильный удар", icon: talentIcon("storm_ui_icon_stitches_slam.png"), shape: "cone", range: 9.5, angle: 70, castDelay: 0.2, outcome: "slow", effect: "Попади внутренней частью конуса для усиленного эффекта." },
+        { key: "e", name: "Пожирание", icon: talentIcon("storm_ui_icon_stitches_devour.png"), shape: "target", range: 1.5, castDelay: 0, outcome: "selfHeal", effect: "Выбери героя в ближнем радиусе и восстанови здоровье." },
+        { key: "r", name: "Заглатывание", icon: talentIcon("storm_ui_icon_stitches_cannibalize.png"), shape: "target", range: 1.5, castDelay: 0, outcome: "cocoon", effect: "Изолируй приоритет только после сближения на реальный радиус." },
+      ],
+    },
+    tyrael: {
+      id: "tyrael",
+      name: "Тираэль",
+      speed: 4.8398,
+      radius: 0.75,
+      abilities: [
+        { key: "q", name: "Мощь Эл'друина", icon: talentIcon("storm_ui_icon_tyrael_eldruinsmight_a.png"), shape: "area", range: 9, radius: 3, castDelay: 0.15, outcome: "leap", effect: "Поставь меч в безопасную точку для замедления и телепорта." },
+        { key: "w", name: "Праведность", icon: talentIcon("storm_ui_icon_tyrael_righteousness.png"), shape: "self", range: 5, castDelay: 0, supportive: true, outcome: "shield", effect: "Накрой щитом союзников вокруг Тираэля, а не только себя." },
+        { key: "e", name: "Кара", icon: talentIcon("storm_ui_icon_tyrael_smite.png"), shape: "cone", range: 5.5, angle: 75, castDelay: 0, outcome: "slow", effect: "Проведи союзников через область ускорения к следующей позиции." },
+        { key: "r", name: "Осуждение", icon: talentIcon("storm_ui_icon_tyrael_judgement.png"), shape: "target", range: 12.5, castDelay: 0.75, outcome: "charge", effect: "Выбери изолированную цель и учти время подготовки рывка." },
+      ],
+    },
+    varian: {
+      id: "varian",
+      name: "Вариан",
+      speed: 4.8398,
+      radius: 0.75,
+      abilities: [
+        { key: "q", name: "Львиный клык", icon: talentIcon("storm_ui_icon_varian_lionsfang.png"), shape: "line", range: 10.65, width: 0.875, castDelay: 0.125, outcome: "slow", effect: "Узкая волна лечит за попадание: проведи её через героя." },
+        { key: "w", name: "Парирование", icon: talentIcon("storm_ui_icon_varian_parry.png"), shape: "self", range: 0, castDelay: 0, defensive: true, timingWindow: 0.4, outcome: "shield", effect: "Нажми W в окно входящей автоатаки, а не заранее." },
+        { key: "e", name: "Рывок", icon: talentIcon("storm_ui_icon_varian_charge.png"), shape: "target", range: 5, castDelay: 0, outcome: "charge", effect: "Сблизься с приоритетом только после входа в реальный range." },
+        { key: "r", name: "Провокация", icon: talentIcon("storm_ui_icon_varian_taunt.png"), shape: "target", range: 2, castDelay: 0, outcome: "taunt", effect: "Зафиксируй мобильную цель в ближнем радиусе для follow-up." },
+      ],
+    },
+  });
+
   var TANK_IDS = Object.keys(TANK_ROSTER);
   var HERO_RADII = {
     anduin: 0.625,
@@ -289,15 +413,16 @@
       index: "01",
       kicker: "Точность",
       title: "Ability Placement",
-      duration: 35,
+      duration: 60,
       icon: ABILITIES.muradin,
       description:
         "Разыгрывай Q / W / E / R выбранного танка: геометрия, задержка и результат каждой способности различаются.",
       controls:
-        "Выбери танка. Направляемую способность подтверди ЛКМ или её клавишей; self-cast активируется только нужной клавишей Q / W / E / R.",
+        "ПКМ двигает выбранного танка с поиском пути. После отдельной фазы чтения направь способность ЛКМ или клавишей; self-cast активируется Q / W / E / R.",
       steps: [
-        "Прочитай название текущей способности и её дальность.",
-        "Найди золотую приоритетную цель; синяя рамка обозначает союзника.",
+        "Сначала прочитай карточку способности: ситуация появится только после отсчёта.",
+        "Синяя рамка и подпись СОЮЗНИК — ваша команда; красная и ВРАГ — противник.",
+        "ПКМ займи позицию, с которой реальная дальность позволяет выполнить задачу.",
         "Учти форму, задержку, дальность и радиус модели.",
         "Проверь результат каста: стан, slow, shield, рывок, притяжение или бросок отображаются на арене.",
       ],
@@ -314,16 +439,17 @@
       index: "02",
       kicker: "Скорость",
       title: "Target Switch",
-      duration: 40,
+      duration: 60,
       icon: ABILITIES.swiftStrike,
       description:
         "Сохраняй давление на фронте, замечай дайвера и выбирай STUN, PEEL или IGNORE.",
       controls:
         "До сигнала держи курсор на основной цели. Затем кликни нужную цель и выбери 1 / 2 / 3.",
       steps: [
-        "STUN — потратить hard CC на уязвимого дайвера.",
-        "PEEL — защитить backline позицией, когда контроль невыгоден.",
-        "IGNORE — сохранить engage, если backline в безопасности.",
+        "Первый раунд — обучающий: пять секунд на чтение ролей и действий.",
+        "STUN — кликни дайвера и потрать hard CC, если его нельзя спасти Cleanse.",
+        "PEEL — кликни дайвера и защити синего союзника позицией, не отдавая контроль.",
+        "IGNORE — кликни основную цель и продолжи engage, если союзник в безопасности.",
       ],
       scoring: [
         ["+160", "верные цель и решение"],
@@ -364,7 +490,7 @@
       index: "04",
       kicker: "Контроль позиции",
       title: "Bodyblock",
-      duration: 45,
+      duration: 60,
       icon: avatar("muradin"),
       description:
         "Закрой путь к выходу, сохрани дистанцию до команды и не заходи в зону башен.",
@@ -373,7 +499,8 @@
       steps: [
         "Клик создаёт маршрут; герой сам обходит непроходимые блоки.",
         "Физический хитбокс и скорость соответствуют выбранному танку в сборке 97.0.39.",
-        "Держись между врагом и выходом, но не отрывайся от команды.",
+        "Противник видит блок, выбирает свободную сторону и может сделать ложный финт.",
+        "Перестраивай путь ПКМ, держись между врагом и выходом, но не отрывайся от команды.",
       ],
       scoring: [
         ["+75/с", "качественный bodyblock"],
@@ -663,7 +790,7 @@
       "<p>Короткие сессии тренируют точность кнопки, смену фокуса, окно контроля и геометрию bodyblock. Каждый сценарий остаётся привязан к роли танка.</p>",
       "<dl>",
       "<div><dt>4</dt><dd>механических drill</dd></div>",
-      "<div><dt>30–45</dt><dd>секунд на сессию</dd></div>",
+      "<div><dt>30–60</dt><dd>секунд на сессию</dd></div>",
       "</dl>",
       "</div>",
       "</header>",
@@ -1023,7 +1150,10 @@
       self.bodyCommandHeld = false;
     });
     this.canvas.addEventListener("contextmenu", function (event) {
-      if (self.phase === "running" && self.drillId === "bodyblock") {
+      if (
+        self.phase === "running" &&
+        (self.drillId === "bodyblock" || self.drillId === "ability")
+      ) {
         event.preventDefault();
       }
     });
@@ -1129,6 +1259,15 @@
       };
       scalePoint(this.pointer);
       if (this.drillId === "ability") {
+        scalePoint(this.drillState.tank);
+        scalePoint(this.drillState.moveTarget);
+        (this.drillState.movePath || []).forEach(scalePoint);
+        (this.drillState.obstacles || []).forEach(function (obstacle) {
+          obstacle.x *= scaleX;
+          obstacle.y *= scaleY;
+          obstacle.width *= scaleX;
+          obstacle.height *= scaleY;
+        });
         this.drillState.targets.forEach(scalePoint);
         if (this.drillState.trail) {
           scalePoint(this.drillState.trail.from);
@@ -1186,6 +1325,15 @@
     ) {
       this.issueBodyblockCommand(next, this.now(), true);
     }
+    if (
+      this.phase === "running" &&
+      this.drillId === "ability" &&
+      this.bodyCommandHeld &&
+      this.drillState &&
+      this.now() - this.lastBodyCommandAt >= 120
+    ) {
+      this.issueAbilityMove(next, this.now(), true);
+    }
   };
 
   ArenaController.prototype.onPointerDown = function (event) {
@@ -1195,6 +1343,15 @@
     this.pointer.y = point.y;
     this.pointer.active = true;
     if (this.drillId === "ability" && event.button === 0) this.handleAbilityShot(point);
+    else if (
+      this.drillId === "ability" &&
+      this.drillState &&
+      event.button === 2
+    ) {
+      event.preventDefault();
+      this.bodyCommandHeld = true;
+      this.issueAbilityMove(point, this.now(), false);
+    }
     else if (this.drillId === "switch" && event.button === 0) this.handleSwitchTarget(point);
     else if (this.drillId === "interrupt" && event.button === 0) this.handleInterrupt();
     else if (
@@ -2133,7 +2290,41 @@
   };
 
   ArenaController.prototype.abilityTankPoint = function () {
+    if (
+      this.drillId === "ability" &&
+      this.drillState &&
+      this.drillState.tank
+    ) {
+      return this.drillState.tank;
+    }
     return { x: this.width * 0.5, y: this.height * 0.82 };
+  };
+
+  ArenaController.prototype.issueAbilityMove = function (point, now, continuous) {
+    var state = this.drillState;
+    if (!state || !state.tank || !state.round || now < state.round.activeAt) {
+      if (!continuous) this.showFeedback("СНАЧАЛА ПРОЧИТАЙ ЗАДАНИЕ", false);
+      return;
+    }
+    var route = buildVisibilityRoute(
+      state.tank,
+      point,
+      state.obstacles || [],
+      state.tank.radius,
+      this.width,
+      this.height,
+    );
+    state.moveTarget.x = route.destination.x;
+    state.moveTarget.y = route.destination.y;
+    state.movePath = route.waypoints;
+    state.commandMarkerUntil = now + 700;
+    this.lastBodyCommandAt = now;
+    if (!continuous) {
+      this.showFeedback(
+        route.projected ? "ТОЧКА СКОРРЕКТИРОВАНА · ПУТЬ ПОСТРОЕН" : "ПКМ · ПУТЬ ПОСТРОЕН",
+        !route.projected,
+      );
+    }
   };
 
   function cappedPoint(from, to, maximumDistance) {
@@ -2184,6 +2375,18 @@
     this.drillState = {
       round: null,
       targets: [],
+      tank: {
+        x: this.width * 0.5,
+        y: this.height * 0.82,
+        radius: (TANK_ROSTER[this.selectedHero].radius || 0.75) * this.arenaUnitScale(),
+      },
+      moveTarget: { x: this.width * 0.5, y: this.height * 0.82 },
+      movePath: [],
+      commandMarkerUntil: 0,
+      obstacles: [
+        { x: this.width * 0.18, y: this.height * 0.48, width: this.width * 0.18, height: 34 },
+        { x: this.width * 0.64, y: this.height * 0.55, width: this.width * 0.17, height: 38 },
+      ],
       trail: null,
       nextRoundAt: now,
       noise: [],
@@ -2204,11 +2407,16 @@
     var unitScale = this.arenaUnitScale();
     var tank = this.abilityTankPoint();
     var tankRadius = hero.radius * unitScale;
+    state.tank.radius = tankRadius;
     var targetPool = ["genji", "diablo", "garrosh", "l90etc", "arthas", "valla"]
       .filter(function (targetHero) {
         return targetHero !== hero.id;
       });
-    var correctHero = ability.defensive ? "valla" : choose(targetPool);
+    var correctHero = ability.defensive
+      ? "valla"
+      : ability.supportive
+        ? "anduin"
+        : choose(targetPool);
     var roster = [correctHero, "johanna", "anduin", choose(targetPool)];
     var seen = {};
     roster = roster.filter(function (targetHero) {
@@ -2303,7 +2511,7 @@
         y: point.y,
         radius: radius,
         correct: correct,
-        ally: targetHero === "anduin" && !correct,
+        ally: targetHero === "anduin",
         forbidden: targetHero === "johanna" && !correct,
         vx: moving ? randomBetween(-34, 34) : index > 1 ? randomBetween(-18, 18) : 0,
         vy: moving ? randomBetween(-16, 16) : 0,
@@ -2315,34 +2523,10 @@
     state.casterVisual = null;
     state.casterEffect = null;
     state.effectPulse = null;
-    var threatCueAt = ability.defensive ? now + 280 : 0;
+    var activeAt = now + 3600;
+    var threatCueAt = ability.defensive ? activeAt + 500 : 0;
     var threatImpactAt = ability.defensive ? threatCueAt + 980 : 0;
-    state.round = {
-      hero: hero,
-      ability: ability,
-      correctHero: correctHero,
-      startAt: now,
-      cueAt: threatCueAt,
-      impactAt: threatImpactAt,
-      windowStart: ability.defensive
-        ? threatImpactAt - (ability.timingWindow || 0.42) * 1000
-        : 0,
-      windowEnd: ability.defensive ? threatImpactAt : 0,
-      deadline: ability.defensive
-        ? threatImpactAt + 180
-        : now + Math.max(1250, 2450 - (this.difficulty - 1) * 170),
-      resolved: false,
-    };
-    state.nextRoundAt = Infinity;
-    state.noise = Array.from({ length: 10 }, function () {
-      return {
-        x: randomBetween(0, self.width),
-        y: randomBetween(self.height * 0.18, self.height * 0.72),
-        radius: randomBetween(12, 42),
-        alpha: randomBetween(0.025, 0.075),
-      };
-    });
-    this.callout.innerHTML = ability.defensive
+    var taskCallout = ability.defensive
       ? hero.name.toUpperCase() +
         " " +
         ability.key.toUpperCase() +
@@ -2355,15 +2539,57 @@
         " · " +
         ability.name.toUpperCase() +
         " → <b>" +
+        (ability.supportive ? "СОЮЗНИК · " : "ВРАГ · ") +
         HERO_NAMES[correctHero].toUpperCase() +
         "</b>";
-    this.contextText.textContent = ability.defensive
-      ? "SELF-CAST · дождись красного снаряда и нажми W в золотое окно перед попаданием."
-      : abilityShapeLabel(ability) +
+    var taskContext = ability.defensive
+      ? "SELF-CAST · дождись красного снаряда и нажми " +
+        ability.key.toUpperCase() +
+        " в золотое окно перед попаданием."
+      : "ПКМ — движение · " +
+        abilityShapeLabel(ability) +
         " · " +
         abilityGeometryLabel(ability) +
         ". " +
         ability.effect;
+    state.round = {
+      hero: hero,
+      ability: ability,
+      correctHero: correctHero,
+      startAt: activeAt,
+      activeAt: activeAt,
+      activated: false,
+      taskCallout: taskCallout,
+      taskContext: taskContext,
+      cueAt: threatCueAt,
+      impactAt: threatImpactAt,
+      windowStart: ability.defensive
+        ? threatImpactAt - (ability.timingWindow || 0.42) * 1000
+        : 0,
+      windowEnd: ability.defensive ? threatImpactAt : 0,
+      deadline: ability.defensive
+        ? threatImpactAt + 180
+        : activeAt + Math.max(3600, 5000 - (this.difficulty - 1) * 240),
+      resolved: false,
+    };
+    state.nextRoundAt = Infinity;
+    state.noise = Array.from({ length: 10 }, function () {
+      return {
+        x: randomBetween(0, self.width),
+        y: randomBetween(self.height * 0.18, self.height * 0.72),
+        radius: randomBetween(12, 42),
+        alpha: randomBetween(0.025, 0.075),
+      };
+    });
+    this.callout.innerHTML = "ПОДГОТОВКА · <b>ПРОЧИТАЙ ЗАДАНИЕ</b>";
+    this.contextText.textContent =
+      hero.name +
+      " · " +
+      ability.key.toUpperCase() +
+      " · " +
+      ability.name +
+      ". " +
+      taskContext;
     this.parameterElement.textContent = ability.defensive
       ? ability.key.toUpperCase() +
         " · ОКНО " +
@@ -2459,6 +2685,11 @@
         label: "ПРЫЖОК",
         until: now + effectDuration,
       };
+      state.tank.x = result.aimEnd.x;
+      state.tank.y = result.aimEnd.y;
+      state.moveTarget.x = state.tank.x;
+      state.moveTarget.y = state.tank.y;
+      state.movePath = [];
       affected.forEach(function (target) {
         self.markAbilityTarget(target, "ПРИЗЕМЛЕНИЕ", now, effectDuration, 0.55);
       });
@@ -2482,6 +2713,11 @@
         label: "ПОДЗЕМНЫЙ РЫВОК",
         until: now + effectDuration,
       };
+      state.tank.x = result.aimEnd.x;
+      state.tank.y = result.aimEnd.y;
+      state.moveTarget.x = state.tank.x;
+      state.moveTarget.y = state.tank.y;
+      state.movePath = [];
       affected.forEach(function (target) {
         self.markAbilityTarget(target, "ПОДБРОШЕН", now, effectDuration, 0);
       });
@@ -2497,6 +2733,11 @@
         label: "РЫВОК",
         until: now + effectDuration,
       };
+      state.tank.x = state.casterVisual.x;
+      state.tank.y = state.casterVisual.y;
+      state.moveTarget.x = state.tank.x;
+      state.moveTarget.y = state.tank.y;
+      state.movePath = [];
       if (result.wallReady && state.wall) {
         this.moveAbilityTarget(primary, {
           x: state.wall.x - primary.radius - 4,
@@ -2555,6 +2796,14 @@
       affected.forEach(function (target) {
         self.markAbilityTarget(target, "ПРОВОКАЦИЯ", now, effectDuration, 0);
       });
+    } else if (ability.outcome === "shield") {
+      affected.forEach(function (target) {
+        self.markAbilityTarget(target, "ЩИТ", now, effectDuration, 0.25);
+      });
+      state.casterEffect = {
+        label: "ЩИТ КОМАНДЕ",
+        until: now + effectDuration,
+      };
     }
     state.effectPulse = {
       x: primary ? primary.x : result.aimEnd.x,
@@ -2745,6 +2994,10 @@
     var state = this.drillState;
     if (!state || !state.round || state.round.resolved) return;
     var now = this.now();
+    if (now < state.round.activeAt) {
+      this.showFeedback("ЗАДАНИЕ ЕЩЁ НЕ НАЧАЛОСЬ · ПРОЧИТАЙ УСЛОВИЕ", false);
+      return;
+    }
     if (state.round.ability.defensive) {
       this.handleDefensiveAbility(now, sourceKey);
       return;
@@ -2828,6 +3081,46 @@
   ArenaController.prototype.updateAbility = function (now, delta) {
     var state = this.drillState;
     if (!state || !state.round) return;
+    var seconds = delta / 1000;
+    state.tank.radius = state.round.hero.radius * this.arenaUnitScale();
+    moveEntityAlongRoute(
+      state.tank,
+      state.movePath,
+      state.round.hero.speed * this.arenaUnitScale(),
+      seconds,
+    );
+    (state.obstacles || []).forEach(
+      function (obstacle) {
+        if (resolveCircleRect(state.tank, obstacle)) {
+          var rebuilt = buildVisibilityRoute(
+            state.tank,
+            state.moveTarget,
+            state.obstacles,
+            state.tank.radius,
+            this.width,
+            this.height,
+          );
+          state.movePath = rebuilt.waypoints;
+        }
+      }.bind(this),
+    );
+    state.tank.x = clamp(state.tank.x, state.tank.radius + 18, this.width - state.tank.radius - 18);
+    state.tank.y = clamp(state.tank.y, state.tank.radius + 82, this.height - state.tank.radius - 18);
+
+    if (now < state.round.activeAt) {
+      this.callout.innerHTML =
+        "ПОДГОТОВКА · <b>" +
+        Math.max(1, Math.ceil((state.round.activeAt - now) / 1000)) +
+        "</b>";
+      this.renderAbility(now);
+      return;
+    }
+    if (!state.round.activated) {
+      state.round.activated = true;
+      this.callout.innerHTML = state.round.taskCallout;
+      this.contextText.textContent = state.round.taskContext;
+      this.showFeedback("СИТУАЦИЯ ОТКРЫТА · ПКМ ДВИЖЕНИЕ · ЛКМ КАСТ", true);
+    }
     if (state.pendingEffect && !state.pendingEffect.applied && now >= state.pendingEffect.at) {
       this.applyAbilityEffect(state.pendingEffect, now);
     }
@@ -2872,7 +3165,6 @@
     }
     if (state.round.resolved && now >= state.nextRoundAt) this.spawnAbilityRound(now);
 
-    var seconds = delta / 1000;
     state.targets.forEach(
       function (target) {
         var motionScale =
@@ -3012,6 +3304,85 @@
     var tankRadius = hero.radius * unitScale;
     this.renderArenaGrid();
 
+    (state.obstacles || []).forEach(function (obstacle) {
+      context.save();
+      context.fillStyle = "rgba(25, 35, 44, 0.94)";
+      context.strokeStyle = "rgba(197, 173, 118, 0.34)";
+      context.lineWidth = 2;
+      context.beginPath();
+      context.roundRect(obstacle.x, obstacle.y, obstacle.width, obstacle.height, 10);
+      context.fill();
+      context.stroke();
+      context.fillStyle = "rgba(238, 242, 241, 0.52)";
+      context.font = "800 8px Segoe UI, sans-serif";
+      context.textAlign = "center";
+      context.fillText("BLOCK", obstacle.x + obstacle.width / 2, obstacle.y + obstacle.height / 2 + 3);
+      context.restore();
+    });
+    var moveRoute = [{ x: tank.x, y: tank.y }].concat(state.movePath || []);
+    if (moveRoute.length > 1) {
+      context.save();
+      context.strokeStyle = "rgba(115, 168, 191, 0.68)";
+      context.lineWidth = 3;
+      context.setLineDash([5, 7]);
+      context.beginPath();
+      context.moveTo(moveRoute[0].x, moveRoute[0].y);
+      moveRoute.slice(1).forEach(function (point) { context.lineTo(point.x, point.y); });
+      context.stroke();
+      context.restore();
+    }
+    if (now < state.commandMarkerUntil) {
+      context.save();
+      context.strokeStyle = "rgba(115, 168, 191, 0.9)";
+      context.lineWidth = 2;
+      context.beginPath();
+      context.arc(state.moveTarget.x, state.moveTarget.y, 13, 0, Math.PI * 2);
+      context.moveTo(state.moveTarget.x - 18, state.moveTarget.y);
+      context.lineTo(state.moveTarget.x + 18, state.moveTarget.y);
+      context.moveTo(state.moveTarget.x, state.moveTarget.y - 18);
+      context.lineTo(state.moveTarget.x, state.moveTarget.y + 18);
+      context.stroke();
+      context.restore();
+    }
+
+    if (now < state.round.activeAt) {
+      this.drawPortrait(avatar(hero.id), tank.x, tank.y, tankRadius, {
+        ring: "#73a8bf",
+        shadow: true,
+        initials: hero.name.slice(0, 2),
+      });
+      this.drawNameplate("ВЫ · " + hero.name.toUpperCase(), tank.x, tank.y + tankRadius + 17, false);
+      context.save();
+      var cardWidth = Math.min(this.width - 48, 580);
+      var cardX = (this.width - cardWidth) / 2;
+      var cardY = Math.max(88, this.height * 0.2);
+      context.fillStyle = "rgba(15, 22, 29, 0.94)";
+      context.strokeStyle = "rgba(197, 173, 118, 0.62)";
+      context.lineWidth = 2;
+      context.beginPath();
+      context.roundRect(cardX, cardY, cardWidth, 112, 14);
+      context.fill();
+      context.stroke();
+      context.textAlign = "center";
+      context.fillStyle = "rgba(197, 173, 118, 0.98)";
+      context.font = "900 11px Segoe UI, sans-serif";
+      context.fillText(hero.name.toUpperCase() + " · " + state.round.ability.key.toUpperCase(), this.width / 2, cardY + 25);
+      context.fillStyle = "rgba(238, 242, 241, 0.98)";
+      context.font = "900 20px Segoe UI, sans-serif";
+      context.fillText(state.round.ability.name.toUpperCase(), this.width / 2, cardY + 53);
+      context.fillStyle = "rgba(205, 219, 225, 0.78)";
+      context.font = "700 11px Segoe UI, sans-serif";
+      context.fillText(
+        abilityShapeLabel(state.round.ability) + " · " + abilityGeometryLabel(state.round.ability),
+        this.width / 2,
+        cardY + 78,
+      );
+      context.fillStyle = "rgba(115, 168, 191, 0.96)";
+      context.fillText("После отсчёта появятся союзники и враги", this.width / 2, cardY + 98);
+      context.restore();
+      return;
+    }
+
     state.noise.forEach(function (particle) {
       context.fillStyle = "rgba(205, 219, 225, " + particle.alpha + ")";
       context.beginPath();
@@ -3070,7 +3441,13 @@
 
     state.targets.forEach(
       function (target) {
-        var ring = target.ally ? "#73a8bf" : target.correct ? "#c5ad76" : "#b85d61";
+        var ring = target.correct
+          ? state.round.ability.supportive
+            ? "#73a8bf"
+            : "#c5ad76"
+          : target.ally
+            ? "#73a8bf"
+            : "#b85d61";
         context.save();
         context.strokeStyle = "rgba(238, 242, 241, 0.28)";
         context.setLineDash([3, 4]);
@@ -3087,9 +3464,13 @@
         this.drawNameplate(
           target.correct
             ? state.round.ability.defensive
-              ? "ИСТОЧНИК УРОНА · " + HERO_NAMES[target.hero]
-              : "ПРИОРИТЕТ · " + HERO_NAMES[target.hero]
-            : HERO_NAMES[target.hero],
+              ? "ВРАГ · ИСТОЧНИК · " + HERO_NAMES[target.hero]
+              : state.round.ability.supportive
+                ? "СОЮЗНИК · ЗАЩИТИ · " + HERO_NAMES[target.hero]
+                : "ВРАГ · ПРИОРИТЕТ · " + HERO_NAMES[target.hero]
+            : target.ally
+              ? "СОЮЗНИК · " + HERO_NAMES[target.hero]
+              : "ВРАГ · " + HERO_NAMES[target.hero],
           target.x,
           target.y + target.radius + 13,
           !target.ally,
@@ -3220,6 +3601,8 @@
       roundPressureTotal: 0,
       targetClickedAt: 0,
       resolved: false,
+      roundIndex: 0,
+      tutorial: true,
     };
     this.spawnSwitchRound(now);
   };
@@ -3227,8 +3610,11 @@
   ArenaController.prototype.spawnSwitchRound = function (now) {
     var state = this.drillState;
     var margin = Math.max(42, Math.min(this.width, this.height) * 0.08);
+    var tutorial = state.roundIndex === 0;
     state.mode = "pressure";
-    state.scenario = choose(SWITCH_SCENARIOS);
+    state.scenario = tutorial ? SWITCH_SCENARIOS[0] : choose(SWITCH_SCENARIOS);
+    state.tutorial = tutorial;
+    state.roundIndex += 1;
     state.main = {
       x: randomBetween(this.width * 0.56, this.width - margin - 46),
       y: randomBetween(this.height * 0.32, this.height * 0.61),
@@ -3244,8 +3630,9 @@
       y: randomBetween(this.height * 0.18, this.height * 0.34),
       radius: 35,
     };
-    state.signalAt =
-      now + Math.max(620, randomBetween(980, 1580) - (this.difficulty - 1) * 110);
+    state.signalAt = tutorial
+      ? now + 5000
+      : now + Math.max(1300, randomBetween(1900, 2800) - (this.difficulty - 1) * 110);
     state.deadline = Infinity;
     state.nextRoundAt = Infinity;
     state.clickedTarget = "";
@@ -3261,17 +3648,22 @@
     this.overlay.querySelectorAll("[data-switch-action]").forEach(function (button) {
       button.disabled = true;
     });
-    this.switchStep.textContent = "СИГНАЛ ЕЩЁ НЕ ПОЯВИЛСЯ";
-    this.callout.innerHTML = "ДАВЛЕНИЕ → <b>ОСНОВНАЯ ЦЕЛЬ</b>";
-    this.contextText.textContent =
-      "Держи курсор на основной цели. После сигнала кликни нужную цель и выбери действие.";
+    this.switchStep.textContent = tutorial
+      ? "ОБУЧЕНИЕ · ПРОЧИТАЙ РОЛИ И ТРИ ДЕЙСТВИЯ"
+      : "СИГНАЛ ЕЩЁ НЕ ПОЯВИЛСЯ";
+    this.callout.innerHTML = tutorial
+      ? "ШАГ 0 · <b>КУРСОР НА ВАЛЛЕ</b>"
+      : "ДАВЛЕНИЕ → <b>ОСНОВНАЯ ЦЕЛЬ</b>";
+    this.contextText.innerHTML = tutorial
+      ? '<strong class="arena-context__title">СИНЯЯ РАМКА — СОЮЗНИК. КРАСНАЯ — ВРАГ.</strong><span>Сейчас держи курсор на ВАЛЛЕ.</span><span>После сигнала: клик по нужной цели → STUN, PEEL или IGNORE.</span>'
+      : "Держи курсор на основной цели. После сигнала кликни нужную цель и выбери действие.";
   };
 
   ArenaController.prototype.triggerSwitchSignal = function (now) {
     var state = this.drillState;
     state.mode = "signal";
     state.signalAt = now;
-    state.deadline = now + Math.max(1450, 2650 - (this.difficulty - 1) * 180);
+    state.deadline = now + Math.max(3600, 5000 - (this.difficulty - 1) * 180);
     var expected = state.scenario.target === "diver" ? state.diver : state.main;
     state.directDistance = this.pointer.active
       ? distance(this.pointer, expected)
@@ -3386,7 +3778,7 @@
 
     state.resolved = true;
     state.mode = "resolved";
-    state.nextRoundAt = now + 520;
+    state.nextRoundAt = now + (state.tutorial ? 1500 : 820);
     this.actions.classList.remove("is-visible");
     this.overlay.querySelectorAll("[data-switch-action]").forEach(function (button) {
       button.disabled = true;
@@ -3455,7 +3847,7 @@
       shadow: true,
       initials: "VA",
     });
-    this.drawNameplate("ОСНОВНАЯ ЦЕЛЬ · ВАЛЛА", state.main.x, state.main.y + 53, true);
+    this.drawNameplate("ВРАГ · ОСНОВНАЯ ЦЕЛЬ · ВАЛЛА", state.main.x, state.main.y + 53, true);
 
     this.drawPortrait(avatar("anduin"), state.healer.x, state.healer.y, state.healer.radius, {
       ring: "#73a8bf",
@@ -3463,24 +3855,26 @@
       shadow: true,
       initials: "AN",
     });
-    this.drawNameplate("BACKLINE · АНДУИН", state.healer.x, state.healer.y + 48, false);
+    this.drawNameplate("СОЮЗНИК · BACKLINE · АНДУИН", state.healer.x, state.healer.y + 48, false);
 
-    if (state.mode !== "pressure") {
+    if (state.mode !== "pressure" || state.tutorial) {
       var pulse = 1 + Math.sin(now / 95) * 0.08;
-      context.save();
-      context.strokeStyle = "rgba(184, 93, 97, 0.72)";
-      context.lineWidth = 3;
-      context.beginPath();
-      context.arc(state.diver.x, state.diver.y, state.diver.radius * 1.55 * pulse, 0, Math.PI * 2);
-      context.stroke();
-      context.restore();
+      if (state.mode !== "pressure") {
+        context.save();
+        context.strokeStyle = "rgba(184, 93, 97, 0.72)";
+        context.lineWidth = 3;
+        context.beginPath();
+        context.arc(state.diver.x, state.diver.y, state.diver.radius * 1.55 * pulse, 0, Math.PI * 2);
+        context.stroke();
+        context.restore();
+      }
       this.drawPortrait(avatar("genji"), state.diver.x, state.diver.y, state.diver.radius, {
         ring: "#b85d61",
         health: 0.82,
         shadow: true,
         initials: "GE",
       });
-      this.drawNameplate("DIVER · ГЭНДЗИ", state.diver.x, state.diver.y + 49, true);
+      this.drawNameplate("ВРАГ · DIVER · ГЭНДЗИ", state.diver.x, state.diver.y + 49, true);
     }
 
     if (this.pointer.active) {
@@ -4323,6 +4717,9 @@
     state.path = [];
     state.enemyPath = [];
     state.enemyRepathAt = now;
+    state.enemyJukeSide = Math.random() < 0.5 ? -1 : 1;
+    state.enemyJukeAt = now;
+    state.enemyIntent = "ПРОРЫВ";
     state.holdChain = 0;
     state.roundStart = now;
     state.intentAt = now;
@@ -4355,6 +4752,9 @@
       path: [],
       enemyPath: [],
       enemyRepathAt: now,
+      enemyJukeSide: 1,
+      enemyJukeAt: now,
+      enemyIntent: "ПРОРЫВ",
       layout: null,
       holdChain: 0,
       quality: false,
@@ -4454,18 +4854,85 @@
       if (distance(state.enemy, state.tank) > state.enemy.radius + state.tank.radius + 4) {
         enemyObstacles.push(tankObstacle);
       }
+      var enemyDestination = layout.exit;
+      var exitVector = normalizeVector(
+        layout.exit.x - state.enemy.x,
+        layout.exit.y - state.enemy.y,
+      );
+      var enemyToTank = {
+        x: state.tank.x - state.enemy.x,
+        y: state.tank.y - state.enemy.y,
+      };
+      var tankAhead = enemyToTank.x * exitVector.x + enemyToTank.y * exitVector.y;
+      var contactDistance = state.enemy.radius + state.tank.radius;
+      var tankClose = distance(state.enemy, state.tank) < contactDistance + unitScale * 5.6;
+      if (tankAhead > -state.tank.radius && tankClose) {
+        if (now >= state.enemyJukeAt) {
+          var perpendicular = { x: -exitVector.y, y: exitVector.x };
+          var lateralOffset = contactDistance + unitScale * randomBetween(1.6, 2.8);
+          var forwardOffset = contactDistance + unitScale * randomBetween(1.2, 2.1);
+          var candidates = [-1, 1].map(function (side) {
+            var point = {
+              x: clamp(
+                state.tank.x + exitVector.x * forwardOffset + perpendicular.x * lateralOffset * side,
+                state.enemy.radius + 20,
+                this.width - state.enemy.radius - 20,
+              ),
+              y: clamp(
+                state.tank.y + exitVector.y * forwardOffset + perpendicular.y * lateralOffset * side,
+                state.enemy.radius + 20,
+                this.height - state.enemy.radius - 20,
+              ),
+            };
+            var blocked = layout.obstacles.some(function (obstacle) {
+              return pointRectangleDistance(point, obstacle) < state.enemy.radius + 5;
+            });
+            var route = buildVisibilityRoute(
+              state.enemy,
+              point,
+              enemyObstacles,
+              state.enemy.radius,
+              this.width,
+              this.height,
+            );
+            return { side: side, point: point, route: route, cost: route.length + (blocked ? 10000 : 0) };
+          }, this);
+          candidates.sort(function (left, right) { return left.cost - right.cost; });
+          var chosen = Math.random() < 0.72 ? candidates[0] : candidates[1];
+          state.enemyJukeSide = chosen.side;
+          state.enemyJukeAt = now + randomBetween(620, 980);
+          state.enemyIntent = chosen.side < 0 ? "ФИНТ ВЛЕВО" : "ФИНТ ВПРАВО";
+          enemyDestination = chosen.point;
+        } else {
+          var keepPerpendicular = { x: -exitVector.y, y: exitVector.x };
+          enemyDestination = {
+            x: clamp(
+              state.tank.x + exitVector.x * contactDistance * 1.5 + keepPerpendicular.x * contactDistance * 1.45 * state.enemyJukeSide,
+              state.enemy.radius + 20,
+              this.width - state.enemy.radius - 20,
+            ),
+            y: clamp(
+              state.tank.y + exitVector.y * contactDistance * 1.5 + keepPerpendicular.y * contactDistance * 1.45 * state.enemyJukeSide,
+              state.enemy.radius + 20,
+              this.height - state.enemy.radius - 20,
+            ),
+          };
+        }
+      } else {
+        state.enemyIntent = "ИЩЕТ КОРОТКИЙ ПУТЬ";
+      }
       var enemyRoute = buildVisibilityRoute(
         state.enemy,
-        layout.exit,
+        enemyDestination,
         enemyObstacles,
         state.enemy.radius,
         this.width,
         this.height,
       );
       state.enemyPath = enemyRoute.waypoints;
-      state.enemyRepathAt = now + 360;
+      state.enemyRepathAt = now + (tankClose ? 190 : 360);
     }
-    var enemyPace = 0.62 + (this.difficulty - 1) * 0.1;
+    var enemyPace = 0.76 + (this.difficulty - 1) * 0.1;
     moveEntityAlongRoute(
       state.enemy,
       state.enemyPath,
@@ -4520,7 +4987,10 @@
     if (state.inTower) this.contextText.textContent = "Опасно: хитбокс вошёл в радиус башни. Отдай новый приказ ПКМ.";
     else if (state.overextended) this.contextText.textContent = "Команда слишком далеко. Перестрой маршрут ближе к синей зоне.";
     else if (state.quality) this.contextText.textContent = "Качественный bodyblock: физические круги соприкасаются, выход закрыт.";
-    else this.contextText.textContent = "ПКМ в коридор между противником и выходом. Блоки обходятся автоматически.";
+    else this.contextText.textContent =
+      "ВРАГ: " +
+      state.enemyIntent +
+      ". ПКМ перестраивает путь; считывай финт и снова закрывай выход.";
     this.renderBodyblock(now);
   };
 
