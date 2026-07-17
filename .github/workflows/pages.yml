@@ -37,6 +37,9 @@ jobs:
           test -d site/asset-library/assets
           test -f site/asset-library/embeds/heroes/anubarak.html
 
+      - name: Verify local HTML and asset links
+        run: node scripts/check-static-links.mjs site
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
