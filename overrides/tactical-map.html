@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d12">
+  <link rel="icon" href="data:,">
+  <title>Тактический стол — Проклятая лощина</title>
+  <meta name="description" content="Интерактивная 3D-тактическая карта Heroes of the Storm: маршруты, коллизии и время прибытия команды.">
+  <link rel="stylesheet" href="/hots_tank.github.io/tactical-map.css">
+</head>
+<body>
+  <header class="tm-topbar">
+    <a class="tm-brand" href="/hots_tank.github.io">
+      <span class="tm-brand-mark" aria-hidden="true">T</span>
+      <span><strong>TANK FIELD GUIDE</strong><small>TACTICAL SYSTEMS</small></span>
+    </a>
+    <nav class="tm-nav" aria-label="Основная навигация">
+      <a href="/hots_tank.github.io">Гайды</a>
+      <a href="/hots_tank.github.io/lab">Полигон</a>
+      <a class="is-active" href="/hots_tank.github.io/tactical-map" aria-current="page">Тактическая карта</a>
+    </nav>
+    <div class="tm-build"><span></span> LOCAL SIM · v0.1</div>
+  </header>
+
+  <main class="tm-shell">
+    <aside class="tm-roster" aria-label="Состав команды">
+      <div class="tm-panel-heading">
+        <div><span>ОТРЯД</span><strong>5 / 5</strong></div>
+        <button class="tm-icon-button" id="resetTeam" type="button" title="Вернуть команду на старт">↺</button>
+      </div>
+      <div id="rosterList" class="tm-roster-list"></div>
+      <section class="tm-selection" aria-live="polite">
+        <span class="tm-eyebrow">ВЫБРАННЫЙ БОЕЦ</span>
+        <div class="tm-selected-title"><strong id="selectedName">Мурадин</strong><span id="selectedRole">ТАНК</span></div>
+        <dl class="tm-stats">
+          <div><dt>Скорость</dt><dd id="selectedSpeed">4.84</dd></div>
+          <div><dt>Радиус</dt><dd id="selectedRadius">0.81</dd></div>
+          <div><dt>Маршрут</dt><dd id="selectedDistance">—</dd></div>
+          <div><dt>Прибытие</dt><dd id="selectedEta">—</dd></div>
+        </dl>
+        <button class="tm-mount-toggle" id="mountToggle" type="button" aria-pressed="false">
+          <span class="tm-mount-icon" aria-hidden="true">◆</span>
+          <span><strong>Транспорт</strong><small id="mountState">Пешком · 100%</small></span>
+          <kbd>M</kbd>
+        </button>
+      </section>
+      <div class="tm-source-note">
+        <span>ИСТОЧНИК СЦЕНЫ</span>
+        <strong>Cursed.Hollow.stormmap</strong>
+        <small id="sourceStats">Чтение данных…</small>
+      </div>
+    </aside>
+
+    <section class="tm-stage" aria-label="Трёхмерная тактическая карта">
+      <div class="tm-stage-head">
+        <div>
+          <span class="tm-eyebrow">ТАКТИЧЕСКИЙ СТОЛ / ПОЛЕ БОЯ</span>
+          <h1>Проклятая лощина</h1>
+        </div>
+        <div class="tm-stage-meta">
+          <span id="cameraMode">ИЗОМЕТРИЯ 3D</span>
+          <span id="cursorCoords">X — · Y —</span>
+        </div>
+      </div>
+
+      <div class="tm-viewport" id="viewport">
+        <canvas id="glCanvas" aria-label="3D-сцена Проклятой лощины"></canvas>
+        <canvas id="overlayCanvas" aria-hidden="true"></canvas>
+        <div class="tm-vignette" aria-hidden="true"></div>
+
+        <div class="tm-loading" id="loadingPanel" role="status">
+          <span class="tm-loader"></span>
+          <strong>СОБИРАЕМ ПОЛЕ БОЯ</strong>
+          <small id="loadingDetail">Высоты · коллизии · геометрия</small>
+        </div>
+
+        <div class="tm-layers" aria-label="Слои карты">
+          <span>СЛОИ</span>
+          <label><input type="checkbox" data-layer="structures" checked><i></i>Строения</label>
+          <label><input type="checkbox" data-layer="bushes" checked><i></i>Кусты</label>
+          <label><input type="checkbox" data-layer="camps" checked><i></i>Кемпы</label>
+          <label><input type="checkbox" data-layer="objectives" checked><i></i>Дары</label>
+          <label><input type="checkbox" data-layer="pathing"><i></i>Коллизии</label>
+        </div>
+
+        <div class="tm-camera-tools" aria-label="Камера">
+          <button id="topView" type="button" title="Вид сверху">TOP</button>
+          <button id="fitView" type="button" title="Показать всю карту">FIT</button>
+          <button id="zoomIn" type="button" title="Приблизить">+</button>
+          <button id="zoomOut" type="button" title="Отдалить">−</button>
+        </div>
+
+        <div class="tm-context-hint" id="contextHint">
+          <span class="tm-mouse right" aria-hidden="true"></span>
+          <strong>ПКМ — построить маршрут</strong>
+          <small>Shift + ПКМ добавит следующую точку</small>
+        </div>
+      </div>
+
+      <div class="tm-transport">
+        <button class="tm-play" id="playToggle" type="button" aria-label="Запустить симуляцию" aria-pressed="false"><span></span></button>
+        <div class="tm-clock"><span>ВРЕМЯ СЦЕНАРИЯ</span><strong id="simClock">00:00.0</strong></div>
+        <div class="tm-speed" role="group" aria-label="Скорость симуляции">
+          <button type="button" data-speed="0.5">×0.5</button>
+          <button class="is-active" type="button" data-speed="1">×1</button>
+          <button type="button" data-speed="2">×2</button>
+        </div>
+        <div class="tm-transport-divider"></div>
+        <div class="tm-order-status"><span id="orderDot"></span><strong id="orderTitle">ПАУЗА ПЛАНИРОВАНИЯ</strong><small id="orderDetail">Расставьте маршруты всей команде</small></div>
+        <button class="tm-clear" id="clearOrders" type="button">Очистить маршруты</button>
+      </div>
+    </section>
+
+    <aside class="tm-intel" aria-label="Командный план">
+      <div class="tm-panel-heading">
+        <div><span>ПЛАН ОПЕРАЦИИ</span><strong id="planCount">0 КОМАНД</strong></div>
+        <button class="tm-icon-button" id="helpButton" type="button" title="Открыть обучение">?</button>
+      </div>
+      <section class="tm-objective-card">
+        <span class="tm-eyebrow">СТАРТОВЫЙ СЦЕНАРИЙ</span>
+        <strong>Выход на линии</strong>
+        <p>Соберите пятёрку в миде, затем раздайте каждому игроку маршрут до своей позиции.</p>
+        <div><span>ПАУЗА</span><b>АКТИВНА</b></div>
+      </section>
+      <div class="tm-timeline-head"><span>ОЧЕРЕДЬ ПРИКАЗОВ</span><small>ETA ПО РЕАЛЬНОЙ СКОРОСТИ</small></div>
+      <div class="tm-timeline" id="timeline">
+        <div class="tm-empty-plan"><span>＋</span><strong>Приказов пока нет</strong><small>Выберите героя и нажмите ПКМ на карте</small></div>
+      </div>
+      <section class="tm-legend">
+        <span class="tm-eyebrow">КАК ЧИТАТЬ КАРТУ</span>
+        <div><i class="blue"></i>Синие строения</div>
+        <div><i class="red"></i>Красные строения</div>
+        <div><i class="amber"></i>Наёмники и боссы</div>
+        <div><i class="violet"></i>Точки появления дара</div>
+      </section>
+      <div class="tm-local-note"><span>◉</span><p><strong>Без сервера</strong>Путь, движение и ETA считаются в вашем браузере.</p></div>
+    </aside>
+  </main>
+
+  <dialog class="tm-onboarding" id="onboarding">
+    <form method="dialog">
+      <button class="tm-dialog-close" value="close" aria-label="Закрыть">×</button>
+      <span class="tm-dialog-index">TACTICAL TABLE · 01</span>
+      <h2>Раздайте команде маршруты,<br>не запуская игру</h2>
+      <p>Карта восстановлена из игрового архива. Маршруты учитывают стены, painted-pathing и физический радиус выбранного героя.</p>
+      <div class="tm-tutorial-grid">
+        <article><b>01</b><span class="tm-tutorial-mouse left"></span><strong>Выберите героя</strong><small>Кликните по портрету или кружку на карте.</small></article>
+        <article><b>02</b><span class="tm-tutorial-mouse right"></span><strong>Поставьте приказ</strong><small>ПКМ строит путь, Shift + ПКМ добавляет точку.</small></article>
+        <article><b>03</b><span class="tm-tutorial-key">SPACE</span><strong>Запустите время</strong><small>Сравните ETA пешком и на транспорте.</small></article>
+      </div>
+      <div class="tm-dialog-foot">
+        <label><input id="hideTutorial" type="checkbox"> Не показывать при следующем запуске</label>
+        <button class="tm-primary" value="start">Открыть тактический стол <span>→</span></button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="/hots_tank.github.io/tactical-map.js" defer></script>
+</body>
+</html>

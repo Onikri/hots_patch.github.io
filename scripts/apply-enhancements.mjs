@@ -8,6 +8,9 @@ const cssName = "field-guide-enhancements.css";
 const jsName = "field-guide-enhancements.js";
 const suiteCssName = "training-suite.css";
 const suiteJsName = "training-suite.js";
+const tacticalHtmlName = "tactical-map.html";
+const tacticalCssName = "tactical-map.css";
+const tacticalJsName = "tactical-map.js";
 const cssHref = `/hots_tank.github.io/${cssName}`;
 const jsSrc = `/hots_tank.github.io/${jsName}`;
 const suiteCssHref = `/hots_tank.github.io/${suiteCssName}`;
@@ -24,9 +27,14 @@ if (!fs.existsSync(siteRoot)) {
   throw new Error(`Site directory does not exist: ${siteRoot}`);
 }
 
-for (const fileName of [cssName, jsName, suiteCssName, suiteJsName]) {
+for (const fileName of [cssName, jsName, suiteCssName, suiteJsName, tacticalCssName, tacticalJsName]) {
   fs.copyFileSync(path.join(overridesRoot, fileName), path.join(siteRoot, fileName));
 }
+
+fs.copyFileSync(
+  path.join(overridesRoot, tacticalHtmlName),
+  path.join(siteRoot, tacticalHtmlName),
+);
 
 fs.cpSync(
   path.join(overridesRoot, "assets"),
@@ -50,6 +58,20 @@ let changed = 0;
 for (const htmlFile of htmlFiles) {
   let html = fs.readFileSync(htmlFile, "utf8");
   const original = html;
+
+  if (
+    path.basename(htmlFile) !== tacticalHtmlName &&
+    !html.includes('/hots_tank.github.io/tactical-map')
+  ) {
+    html = html.replaceAll(
+      '<a href="/hots_tank.github.io/lab">Полигон</a>',
+      '<a href="/hots_tank.github.io/lab">Полигон</a><a href="/hots_tank.github.io/tactical-map">Тактическая карта</a>',
+    );
+  }
+
+  if (path.basename(htmlFile) === tacticalHtmlName) {
+    continue;
+  }
 
   if (!html.includes(cssHref)) {
     html = html.replace(
