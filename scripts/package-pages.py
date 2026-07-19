@@ -16,6 +16,16 @@ REQUIRED = {
     "lab/training-data.json",
     "training-suite.js",
     "lab/game-assets/training-maps/warhead_junction.png",
+    "tactical-map.html",
+    "tactical-map.css",
+    "tactical-map.js",
+    "lab/game-assets/tactical-map/cursed-hollow/manifest.json",
+    "lab/game-assets/tactical-map/cursed-hollow/terrain.bin",
+    "lab/game-assets/tactical-map/cursed-hollow/terrain-albedo.webp",
+}
+REQUIRED_PREFIXES = {
+    "lab/game-assets/tactical-map/cursed-hollow/native/geometry/": ".tgm2",
+    "lab/game-assets/tactical-map/cursed-hollow/native/textures/": ".webp",
 }
 
 
@@ -47,6 +57,11 @@ def main() -> None:
         missing = REQUIRED - names
         if missing:
             raise RuntimeError(f"Deployment archive is missing: {sorted(missing)}")
+        for prefix, suffix in REQUIRED_PREFIXES.items():
+            if not any(name.startswith(prefix) and name.endswith(suffix) for name in names):
+                raise RuntimeError(
+                    f"Deployment archive has no {suffix} files under {prefix}"
+                )
 
         digest = hashlib.sha256(archive.read_bytes()).hexdigest()
         created: set[str] = set()

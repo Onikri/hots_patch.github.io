@@ -17,6 +17,8 @@ const contentTypes = {
   ".png": "image/png",
   ".svg": "image/svg+xml",
   ".txt": "text/plain; charset=utf-8",
+  ".bin": "application/octet-stream",
+  ".tgm2": "application/octet-stream",
   ".webp": "image/webp",
   ".woff": "font/woff",
   ".woff2": "font/woff2",
